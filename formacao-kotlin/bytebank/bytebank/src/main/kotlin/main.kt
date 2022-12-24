@@ -1,4 +1,3 @@
-
 // Use 'var' para variaveis que podem mudar o valor
 // Use 'val' para variaveis imutaveis
 // Não é possivel criar uma variavel sem inicializa-la
@@ -6,31 +5,71 @@
 
 fun main() {
     println("Bem vindo ao Bytebank!")
-    val titular: String = "Renato"
-    val numeroConta: Int = 1000
-    var saldo: Double = 0.0
 
-    saldo = 100 + 2.0
-    saldo += 200
-    saldo = 0.0
-    saldo -= 1000
+    var i = 0
+//    while (i < 5) {
+//        val titular: String = "Renato $i"
+//        val numeroConta: Int = 1000 + i
+//        var saldo: Double = i + 10.0
+//
+//        //String template
+//        println("titular: $titular")
+//        println("numero da conta $numeroConta")
+//        println("saldo da conta $saldo")
+//        println()
+//        i++
+//    }
 
-    //String template
-    println("titular: $titular")
-    println("numero da conta $numeroConta")
-    println("saldo da conta $saldo")
 
+
+
+
+
+//    for (i in 5 downTo 1) {
+//
+//        //o downTo faz um loop reverso
+//        // o step é usado para iterar dentro do loop
+//        //criamos um if com um break para encerrar o loop em determinada codicao
+//        //criamos um if com um continue para pular quando chegar em determinada condicao
+//
+//        if (i == 2) {
+//            break
+//        }
+//
+//        if (i == 4) {
+//            continue
+//        }
+//
+//        val titular: String = "Renato $i"
+//        val numeroConta: Int = 1000 + i
+//        var saldo: Double = i + 10.0
+//
+//        //String template
+//        println("titular: $titular")
+//        println("numero da conta $numeroConta")
+//        println("saldo da conta $saldo")
+//        println()
+//    }
+
+
+
+    //testaCondicoes(saldo)
+
+
+}
+
+fun testaCondicoes(saldo: Double) {
     //Utilizando o if, else if e else
     if (saldo > 0.0) {
         println("conta é positiva")
-    } else if(saldo == 0.0) {
+    } else if (saldo == 0.0) {
         println("conta é neutra")
     } else {
         println("conta é negativa")
     }
 
     // When expression -> equivalente ao switch case
-    // A sintaxe consiste na chamada do 'when', depois a condição, seguida por '->' que indica o comando a ser executado
+    // A sintaxe consiste na chamada do 'when', depois a condição, seguida por '->' e a ação
     // As chaves são opcionais quando o comando é somente uma linha de código
     when {
         saldo > 0.0 -> println("conta é positiva")
@@ -39,6 +78,35 @@ fun main() {
             println("conta é negativa")
         }
     }
+}
 
+fun primeiroLoopCriandoConta() {
+    for (i in 1..5) {
 
+        val titular: String = "Renato $i"
+        val numeroConta: Int = 1000 + i
+        var saldo: Double = i + 10.0
+
+        //String template
+        println("titular: $titular")
+        println("numero da conta $numeroConta")
+        println("saldo da conta $saldo")
+        println()
+    }
+}
+
+fun loopComDoWhile() {
+    var i = 0
+    do {
+        val titular: String = "Renato $i"
+        val numeroConta: Int = 1000 + i
+        var saldo: Double = i + 10.0
+
+        //String template
+        println("titular: $titular")
+        println("numero da conta $numeroConta")
+        println("saldo da conta $saldo")
+        println()
+        i++
+    } while (i < 7)
 }
