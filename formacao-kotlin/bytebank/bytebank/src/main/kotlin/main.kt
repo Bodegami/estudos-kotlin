@@ -1,28 +1,24 @@
 // Use 'var' para variaveis que podem mudar o valor
 // Use 'val' para variaveis imutaveis
 // Não é possivel criar uma variavel sem inicializa-la
-//O kotlin permite deixar implicito o tipo de retorno
+// O kotlin permite deixar implicito o tipo de retorno
 
 fun main() {
     println("Bem vindo ao Bytebank!")
 
     var i = 0
-//    while (i < 5) {
-//        val titular: String = "Renato $i"
-//        val numeroConta: Int = 1000 + i
-//        var saldo: Double = i + 10.0
-//
-//        //String template
-//        println("titular: $titular")
-//        println("numero da conta $numeroConta")
-//        println("saldo da conta $saldo")
-//        println()
-//        i++
-//    }
+    while (i < 5) {
+        val titular: String = "Renato $i"
+        val numeroConta: Int = 1000 + i
+        var saldo: Double = i + 10.0
 
-
-
-
+        //String template
+        println("titular: $titular")
+        println("numero da conta $numeroConta")
+        println("saldo da conta $saldo")
+        println()
+        i++
+    }
 
 
 //    for (i in 5 downTo 1) {
@@ -54,6 +50,7 @@ fun main() {
 
 
     //testaCondicoes(saldo)
+    println(somar(10, 20))
 
 
 }
@@ -109,4 +106,8 @@ fun loopComDoWhile() {
         println()
         i++
     } while (i < 7)
+}
+
+fun somar(num1: Int, num2: Int): Int {
+    return num1 + num2
 }
