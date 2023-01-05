@@ -6,23 +6,44 @@
 fun main() {
     println("Bem vindo ao Bytebank!")
 
-    val contaRenato = Conta()
-    contaRenato.titular = "Renato"
-    contaRenato.numero = 1000
-    contaRenato.saldo = 200.0
+//    val contaRenato = Conta()
+//    contaRenato.titular = "Renato"
+//    contaRenato.numero = 1000
+//    contaRenato.saldo = 200.0
+//
+//    println(contaRenato.titular)
+//    println(contaRenato.numero)
+//    println(contaRenato.saldo)
+//
+//    val contaFran = Conta()
+//    contaFran.titular = "Fran"
+//    contaFran.numero = 1001
+//    contaFran.saldo = 300.0
+//
+//    println(contaFran.titular)
+//    println(contaFran.numero)
+//    println(contaFran.saldo)
 
-    println(contaRenato.titular)
-    println(contaRenato.numero)
-    println(contaRenato.saldo)
 
-    val contaFran = Conta()
-    contaFran.titular = "Fran"
-    contaFran.numero = 1001
-    contaFran.saldo = 300.0
+    //Exemplo de copia, no Kotlin somente tipos primitivos são copiados para um novo espaço em memoria
+    val numeroX = 10
+    var numeroY = numeroX
+    numeroY++
 
-    println(contaFran.titular)
-    println(contaFran.numero)
-    println(contaFran.saldo)
+    println("numeroX $numeroX")
+    println("numeroY $numeroY")
+
+
+    // Exemplo de referência, no Kotlin somente objetos recebem a referência
+    val contaJoao = Conta()
+    contaJoao.titular = "Joao"
+    var contaMaria = contaJoao
+    contaMaria.titular = "Maria"
+    contaJoao.titular = "Joao"
+
+    println("titula conta joao: ${contaJoao.titular}")
+    println("titula conta maria: ${contaMaria.titular}")
+
 
 
 
