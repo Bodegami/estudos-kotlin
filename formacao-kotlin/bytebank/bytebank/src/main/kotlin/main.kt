@@ -6,48 +6,43 @@
 fun main() {
     println("Bem vindo ao Bytebank!")
 
-//    val contaRenato = Conta()
-//    contaRenato.titular = "Renato"
-//    contaRenato.numero = 1000
-//    contaRenato.saldo = 200.0
-//
-//    println(contaRenato.titular)
-//    println(contaRenato.numero)
-//    println(contaRenato.saldo)
-//
-//    val contaFran = Conta()
-//    contaFran.titular = "Fran"
-//    contaFran.numero = 1001
-//    contaFran.saldo = 300.0
-//
-//    println(contaFran.titular)
-//    println(contaFran.numero)
-//    println(contaFran.saldo)
+    val contaRenato = Conta()
+    contaRenato.titular = "Renato"
+    contaRenato.numero = 1000
+    contaRenato.saldo = 200.0
+
+    println(contaRenato.titular)
+    println(contaRenato.numero)
+    println(contaRenato.saldo)
+
+    val contaFran = Conta()
+    contaFran.titular = "Fran"
+    contaFran.numero = 1001
+    contaFran.saldo = 300.0
+
+    println(contaFran.titular)
+    println(contaFran.numero)
+    println(contaFran.saldo)
 
 
-    //Exemplo de copia, no Kotlin somente tipos primitivos são copiados para um novo espaço em memoria
-    val numeroX = 10
-    var numeroY = numeroX
-    numeroY++
+    println("depositando na conta do Renato")
+    deposita(contaRenato, 50.0)
+    println(contaRenato.saldo)
 
-    println("numeroX $numeroX")
-    println("numeroY $numeroY")
+    println("depositando na conta do Fran")
+    deposita(contaFran, 70.0)
+    println(contaFran.saldo)
 
 
-    // Exemplo de referência, no Kotlin somente objetos recebem a referência
-    val contaJoao = Conta()
-    contaJoao.titular = "Joao"
-    var contaMaria = contaJoao
-    contaMaria.titular = "Maria"
-    contaJoao.titular = "Joao"
-
-    println("titula conta joao: ${contaJoao.titular}")
-    println("titula conta maria: ${contaMaria.titular}")
 
 
 
 
     //executaAsFuncoes()
+}
+
+fun deposita(conta: Conta, valor:Double) {
+    conta.saldo += valor
 }
 
 class Conta {
@@ -84,6 +79,9 @@ fun executaAsFuncoes() {
 
     println("\n<---------------------------------Testa Soma------------------------------------>\n")
     println(somar(10, 20))
+
+    println("\n<---------------------------------Testa Copias e Referências------------------------------------>\n")
+    println(testaCopiasEReferencias())
 }
 
 fun testaCondicoesComIfElse(saldo: Double) {
@@ -193,4 +191,26 @@ fun testaLacosComForEDownTo() {
 
 fun somar(num1: Int, num2: Int): Int {
     return num1 + num2
+}
+
+fun testaCopiasEReferencias() {
+
+    //Exemplo de copia, no Kotlin somente tipos primitivos são copiados para um novo espaço em memoria
+    val numeroX = 10
+    var numeroY = numeroX
+    numeroY++
+
+    println("numeroX $numeroX")
+    println("numeroY $numeroY")
+
+
+    // Exemplo de referência, no Kotlin somente objetos recebem a referência
+    val contaJoao = Conta()
+    contaJoao.titular = "Joao"
+    var contaMaria = contaJoao
+    contaMaria.titular = "Maria"
+    contaJoao.titular = "Joao"
+
+    println("titula conta joao: ${contaJoao.titular}")
+    println("titula conta maria: ${contaMaria.titular}")
 }
