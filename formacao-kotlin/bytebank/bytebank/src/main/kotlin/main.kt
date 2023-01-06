@@ -2,6 +2,7 @@
 // Use 'val' para variaveis imutaveis
 // Não é possivel criar uma variavel sem inicializa-la
 // O kotlin permite deixar implicito o tipo de retorno
+// No Kotlin, por padrao quando nao especificamos o tipo de retorno, implicitamente ele retorna o tipo Unit
 
 fun main() {
     println("Bem vindo ao Bytebank!")
@@ -49,6 +50,15 @@ fun main() {
     contaFran.saca(300.0)
     println(contaFran.saldo)
 
+    println("transferencia da conta da Fran para o Renato:")
+    if (contaFran.transfere(300.0, contaRenato)) {
+        println("Transferencia sucedida")
+    } else {
+        println("Falha na transferencia")
+    }
+
+    println("Saldo da conta do Renato: ${contaRenato.saldo}")
+    println("Saldo da conta da Fran: ${contaFran.saldo}")
 
 
 
@@ -73,6 +83,16 @@ class Conta {
         if(this.saldo >= valor) {
             this.saldo -= valor
         }
+    }
+
+    fun transfere(valor: Double, destino: Conta): Boolean {
+        if (this.saldo >= valor) {
+            this.saca(valor)
+            destino.deposita(valor)
+            return true
+        }
+
+        return false
     }
 
 }
