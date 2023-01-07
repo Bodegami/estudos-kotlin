@@ -7,12 +7,12 @@ class CalculadoraBonificacao {
         this.total += funcionario.bonificacao()
     }
 
-    fun registro(gerente: Gerente) {
-        this.total += gerente.bonificacao()
-    }
-
-    fun registro(diretor: Diretor) {
-        this.total += diretor.bonificacao()
-    }
+//    fun registro(gerente: Gerente) {
+//        this.total += gerente.bonificacao()
+//    }
+//
+//    fun registro(diretor: Diretor) {
+//        this.total += diretor.bonificacao()
+//    }
 
 }
