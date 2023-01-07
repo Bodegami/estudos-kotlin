@@ -15,7 +15,7 @@ class Gerente(
         return false
     }
 
-//    fun bonificacao(): Double {
-//        return salario * 0.2
-//    }
+    override fun bonificacao(): Double {
+        return salario * 0.2
+    }
 }
