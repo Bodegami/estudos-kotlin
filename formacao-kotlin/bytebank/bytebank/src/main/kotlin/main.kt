@@ -10,45 +10,45 @@ fun main() {
     val contaRenato = Conta()
     contaRenato.titular = "Renato"
     contaRenato.numero = 1000
-    contaRenato.setSaldo(200.0)
+    contaRenato.deposita(200.0)
 
     println(contaRenato.titular)
     println(contaRenato.numero)
-    println(contaRenato.getSaldo())
+    println(contaRenato.saldo)
 
     val contaFran = Conta()
     contaFran.titular = "Fran"
     contaFran.numero = 1001
-    contaFran.setSaldo(300.0)
+    contaFran.deposita(300.0)
 
     println(contaFran.titular)
     println(contaFran.numero)
-    println(contaFran.getSaldo())
+    println(contaFran.saldo)
 
 
     println("depositando na conta do Renato")
-    contaRenato.deposita(50.0)
-    println(contaRenato.getSaldo())
+    contaRenato.deposita(-50.0)
+    println(contaRenato.saldo)
 
     println("depositando na conta do Fran")
     contaFran.deposita(70.0)
-    println(contaFran.getSaldo())
+    println(contaFran.saldo)
 
     println("sacando da conta do Renato")
     contaRenato.saca(250.0)
-    println(contaRenato.getSaldo())
+    println(contaRenato.saldo)
 
     println("sacando da conta do Fran")
     contaFran.saca(100.0)
-    println(contaFran.getSaldo())
+    println(contaFran.saldo)
 
     println("saque em excesso")
     contaRenato.saca(100.0)
-    println(contaRenato.getSaldo())
+    println(contaRenato.saldo)
 
     println("saque em excesso")
     contaFran.saca(300.0)
-    println(contaFran.getSaldo())
+    println(contaFran.saldo)
 
     println("transferencia da conta da Fran para o Renato:")
     if (contaFran.transfere(300.0, contaRenato)) {
@@ -57,8 +57,8 @@ fun main() {
         println("Falha na transferencia")
     }
 
-    println("Saldo da conta do Renato: ${contaRenato.getSaldo()}")
-    println("Saldo da conta da Fran: ${contaFran.getSaldo()}")
+    println("Saldo da conta do Renato: ${contaRenato.saldo}")
+    println("Saldo da conta da Fran: ${contaFran.saldo}")
 
 
 
@@ -73,10 +73,16 @@ class Conta {
 
     var titular:String = ""
     var numero:Int = 0
-    private var saldo:Double = 0.0
+    var saldo:Double = 0.0
+        private set(valor) {
+            field = valor
+        }
+        get
 
     fun deposita(valor:Double) {
-        this.saldo += valor
+        if (valor > 0) {
+            this.saldo += valor
+        }
     }
 
     fun saca(valor: Double) {
@@ -95,15 +101,15 @@ class Conta {
         return false
     }
 
-    fun getSaldo(): Double {
-        return this.saldo
-    }
-
-    fun setSaldo(valor: Double) {
-        if (valor > 0) {
-            this.saldo += valor
-        }
-    }
+//    fun getSaldo(): Double {
+//        return this.saldo
+//    }
+//
+//    fun setSaldo(valor: Double) {
+//        if (valor > 0) {
+//            this.saldo += valor
+//        }
+//    }
 
 }
 
