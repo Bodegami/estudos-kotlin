@@ -3,22 +3,23 @@
 // Não é possivel criar uma variavel sem inicializa-la
 // O kotlin permite deixar implicito o tipo de retorno
 // No Kotlin, por padrao quando nao especificamos o tipo de retorno, implicitamente ele retorna o tipo Unit
+// Na classe Conta as variaveis "titular" e "numero" tem Getters e Setters implicitos e publicos
+// Na classe Conta a variavel "saldo" tem Gettter explicito e publico, Setter explicito e privado
+// No kotlin, utilizamos a palavra reservada constructor() para inicializar um construtor secundario
+// O construtor primario fica ao lado do nome da classe. Exemplo: Conta(nome: String, idade: Int)
+// É possivel tb indicar que aquele atributo do construtor é a property. Exemplo: Conta(var nome: String, var idade: Int)
 
 fun main() {
     println("Bem vindo ao Bytebank!")
 
-    val contaRenato = Conta()
-    contaRenato.titular = "Renato"
-    contaRenato.numero = 1000
+    val contaRenato = Conta("Renato", 1000)
     contaRenato.deposita(200.0)
 
     println(contaRenato.titular)
     println(contaRenato.numero)
     println(contaRenato.saldo)
 
-    val contaFran = Conta()
-    contaFran.titular = "Fran"
-    contaFran.numero = 1001
+    val contaFran = Conta("Fran", 1001)
     contaFran.deposita(300.0)
 
     println(contaFran.titular)
@@ -61,32 +62,31 @@ fun main() {
     println("Saldo da conta da Fran: ${contaFran.saldo}")
 
 
-
-
-
     //executaAsFuncoes()
 }
 
 
+class Conta(var titular: String, var numero: Int) {
 
-class Conta {
-
-    var titular:String = ""
-    var numero:Int = 0
-    var saldo:Double = 0.0
+    var saldo: Double = 0.0
         private set(valor) {
             field = valor
         }
         get
 
-    fun deposita(valor:Double) {
+//    constructor(titular: String, numero: Int) {
+//        this.titular = titular
+//        this.numero = numero
+//    }
+
+    fun deposita(valor: Double) {
         if (valor > 0) {
             this.saldo += valor
         }
     }
 
     fun saca(valor: Double) {
-        if(this.saldo >= valor) {
+        if (this.saldo >= valor) {
             this.saldo -= valor
         }
     }
@@ -112,7 +112,6 @@ class Conta {
 //    }
 
 }
-
 
 
 fun executaAsFuncoes() {
@@ -264,8 +263,7 @@ fun testaCopiasEReferencias() {
 
 
     // Exemplo de referência, no Kotlin somente objetos recebem a referência
-    val contaJoao = Conta()
-    contaJoao.titular = "Joao"
+    val contaJoao = Conta("Joao", 1002)
     var contaMaria = contaJoao
     contaMaria.titular = "Maria"
     contaJoao.titular = "Joao"
