@@ -6,6 +6,4 @@ open class Funcionario(
 
     open fun bonificacao(): Double = salario * 0.1
 
-
-
 }
