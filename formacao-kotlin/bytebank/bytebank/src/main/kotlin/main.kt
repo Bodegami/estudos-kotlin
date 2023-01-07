@@ -11,11 +11,18 @@
 // O construtor primario fica ao lado do nome da classe. Exemplo: Conta(nome: String, idade: Int)
 // É possivel tb indicar que aquele atributo do construtor é a property. Exemplo: Conta(var nome: String, var idade: Int)
 // Podemos definir o valor padrão de um atributo do construtor. Exemplo: Conta(var titular: String, val numero: Int = 0)
+
 // No Kotlin existe o conceito de labels que permite identificar qual o parametro que esta sendo enviado, alem disso
 // elas permitem que os atributos do construtor sejam enviados em qualquer ordem
 
 // -------------------MODULO 2--------------------->
 // No Intellij podemos utlizar o comando CTRL + ALT + M para extrair um trecho de codigo para uma funcao
+// Para fazer a herança, precisamos assinar a classe mae como: open class Conta()
+
+// Para indicar que uma classe herda de outra, precisamos declarar na assinatura da classe como no exemplo abaixo:
+// Gerente(val senha: String) : Funcionario(nome: String, cpf: String)
+// Note que no exemplo acima utilizamos o construtor da classe mae e no construtor da classe Gerente temos uma
+// propriedade especifica da classe Gerente
 
 fun main() {
     println("Bem vindo ao Bytebank!")
@@ -44,9 +51,29 @@ fun main() {
     println("bonificação: ${fran.bonificacao()}")
 
     if (fran.autentica(4000)) {
-        println("autenticado com sucesso!")
+        println("autenticado com sucesso! \n")
     } else {
-        println("falha na autenticacao!")
+        println("falha na autenticacao! \n")
+    }
+
+    val gui = Diretor(
+        nome = "Guilherme",
+        cpf = "589614525477",
+        salario = 4000.0,
+        senha = 4000,
+        plr = 200.0
+    )
+
+    println("nome: ${gui.nome}")
+    println("cpf: ${gui.cpf}")
+    println("salario: ${gui.salario}")
+    println("bonificação: ${gui.bonificacao()}")
+    println("plr: ${gui.plr}")
+
+    if (gui.autentica(4000)) {
+        println("autenticado com sucesso! \n")
+    } else {
+        println("falha na autenticacao! \n")
     }
 }
 
