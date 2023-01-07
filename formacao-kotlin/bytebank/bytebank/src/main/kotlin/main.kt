@@ -8,11 +8,14 @@
 // No kotlin, utilizamos a palavra reservada constructor() para inicializar um construtor secundario
 // O construtor primario fica ao lado do nome da classe. Exemplo: Conta(nome: String, idade: Int)
 // É possivel tb indicar que aquele atributo do construtor é a property. Exemplo: Conta(var nome: String, var idade: Int)
+// Podemos definir o valor padrão de um atributo do construtor. Exemplo: Conta(var titular: String, val numero: Int = 0)
+// No Kotlin existe o conceito de labels que permite identificar qual o parametro que esta sendo enviado, alem disso
+// elas permitem que os atributos do construtor sejam enviados em qualquer ordem
 
 fun main() {
     println("Bem vindo ao Bytebank!")
 
-    val contaRenato = Conta("Renato", 1000)
+    val contaRenato = Conta(numero = 1000, titular = "Renato")
     contaRenato.deposita(200.0)
 
     println(contaRenato.titular)
@@ -52,7 +55,7 @@ fun main() {
     println(contaFran.saldo)
 
     println("transferencia da conta da Fran para o Renato:")
-    if (contaFran.transfere(300.0, contaRenato)) {
+    if (contaFran.transfere(valor = 300.0, destino = contaRenato)) {
         println("Transferencia sucedida")
     } else {
         println("Falha na transferencia")
@@ -66,7 +69,10 @@ fun main() {
 }
 
 
-class Conta(var titular: String, var numero: Int) {
+class Conta(
+    var titular: String,
+    val numero: Int
+) {
 
     var saldo: Double = 0.0
         private set(valor) {
