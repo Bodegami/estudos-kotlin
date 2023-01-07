@@ -14,9 +14,22 @@
 // No Kotlin existe o conceito de labels que permite identificar qual o parametro que esta sendo enviado, alem disso
 // elas permitem que os atributos do construtor sejam enviados em qualquer ordem
 
+// -------------------MODULO 2--------------------->
+// No Intellij podemos utlizar o comando CTRL + ALT + M para extrair um trecho de codigo para uma funcao
+
 fun main() {
     println("Bem vindo ao Bytebank!")
 
+    val renato = Funcionario(
+        nome = "Renato",
+        cpf = "02145689611",
+        salario = 1000.0
+    )
+
+    println("nome: ${renato.nome}")
+    println("cpf: ${renato.cpf}")
+    println("salario: ${renato.salario}")
+    println("bonificação: ${renato.bonificacao()}")
 }
 
 
