@@ -60,6 +60,7 @@
 // No Kotlin só esse possível herdar de uma única classe
 // Classes abstratas que herdam de classes abstratas, não tem a obrigação de implementar metodos da classe mãe
 // As interfaces são implicitamente abstratas
+// É possivel criar implementações padrões na interface e sobrescrever nas classes que implementam se for necessário
 
 
 
