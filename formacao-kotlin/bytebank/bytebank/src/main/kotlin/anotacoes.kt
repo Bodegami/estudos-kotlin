@@ -59,6 +59,7 @@
 // Somente classes abstratas podem ter membros/metodos abstratos
 // No Kotlin só esse possível herdar de uma única classe
 // Classes abstratas que herdam de classes abstratas, não tem a obrigação de implementar metodos da classe mãe
+// As interfaces são implicitamente abstratas
 
 
 
