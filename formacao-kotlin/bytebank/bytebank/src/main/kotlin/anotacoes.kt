@@ -56,6 +56,7 @@
 */
 
 // CTRL + N abre o buscados de classes e metodos
+// Somente classes abstratas podem ter membros/metodos abstratos
 
 
 
