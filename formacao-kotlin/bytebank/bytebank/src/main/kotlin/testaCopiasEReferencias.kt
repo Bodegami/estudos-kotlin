@@ -10,7 +10,7 @@ fun testaCopiasEReferencias() {
 
 
     // Exemplo de referência, no Kotlin somente objetos recebem a referência
-    val contaJoao = Conta("Joao", 1002)
+    val contaJoao = ContaCorrente("Joao", 1002)
     var contaMaria = contaJoao
     contaMaria.titular = "Maria"
     contaJoao.titular = "Joao"
