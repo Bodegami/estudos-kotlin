@@ -1,5 +1,7 @@
 package br.com.bodegami.bytebank.modelo
 
+var totalContas = 0
+    private set
 abstract class Conta(
     var titular: Cliente,
     val numero: Int
@@ -9,6 +11,13 @@ abstract class Conta(
         protected set(valor) {
             field = valor
         }
+
+
+
+    init {
+        println("Criando conta...")
+        totalContas++
+    }
 
     fun deposita(valor: Double) {
         if (valor > 0) {
