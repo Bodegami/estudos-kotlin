@@ -62,6 +62,11 @@
 // As interfaces são implicitamente abstratas
 // É possivel criar implementações padrões na interface e sobrescrever nas classes que implementam se for necessário
 
+// ----------------------------------------------MODULO 3-------------------------------------------------->
+
+// CTRL + ALT + O organiza os imports na classe
+// Podemos fazer o import de todos arquivos de um pacote atraves do *. Exemplo: import br.com.modelo.*
+// É possível utilizar alias nos imports. Exemplo: import java.lang.StringBuffer as StringBufferJava
 
 
 
