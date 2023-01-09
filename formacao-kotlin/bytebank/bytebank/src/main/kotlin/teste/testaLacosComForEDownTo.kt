@@ -1,3 +1,5 @@
+package teste
+
 fun testaLacosComForEDownTo() {
 
     for (i in 5 downTo 1) {

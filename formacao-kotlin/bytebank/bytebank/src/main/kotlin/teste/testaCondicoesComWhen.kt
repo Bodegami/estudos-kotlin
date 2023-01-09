@@ -1,3 +1,5 @@
+package teste
+
 fun testaCondicoesComWhen(saldo: Double) {
 
     // When expression -> equivalente ao switch case

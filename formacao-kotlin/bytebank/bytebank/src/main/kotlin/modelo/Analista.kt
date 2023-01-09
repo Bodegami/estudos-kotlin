@@ -1,4 +1,6 @@
-class Auxiliar(
+package modelo
+
+class Analista(
     nome: String,
     cpf: String,
     salario: Double
@@ -7,8 +9,8 @@ class Auxiliar(
     cpf = cpf,
     salario = salario
 ) {
-    override fun bonificacao(): Double {
-        return salario * 0.5
-    }
 
+    override fun bonificacao(): Double {
+        return salario * 0.1
+    }
 }

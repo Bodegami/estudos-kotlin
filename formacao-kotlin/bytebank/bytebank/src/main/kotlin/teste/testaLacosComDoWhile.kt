@@ -1,6 +1,8 @@
-fun testaLacosComForERange() {
-    for (i in 1..5) {
+package teste
 
+fun testaLacosComDoWhile() {
+    var i = 0
+    do {
         val titular: String = "Renato $i"
         val numeroConta: Int = 1000 + i
         var saldo: Double = i + 10.0
@@ -10,5 +12,6 @@ fun testaLacosComForERange() {
         println("numero da conta $numeroConta")
         println("saldo da conta $saldo")
         println()
-    }
+        i++
+    } while (i < 7)
 }

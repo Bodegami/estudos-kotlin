@@ -1,3 +1,5 @@
+package teste
+
 fun testaLacosComWhile() {
     var i = 0
     while (i < 5) {

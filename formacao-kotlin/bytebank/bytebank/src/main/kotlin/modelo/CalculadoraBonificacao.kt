@@ -1,3 +1,7 @@
+package modelo
+
+import modelo.Funcionario
+
 class CalculadoraBonificacao {
 
     var total: Double = 0.0
@@ -7,11 +11,11 @@ class CalculadoraBonificacao {
         this.total += funcionario.bonificacao()
     }
 
-//    fun registro(gerente: Gerente) {
+//    fun registro(gerente: modelo.Gerente) {
 //        this.total += gerente.bonificacao()
 //    }
 //
-//    fun registro(diretor: Diretor) {
+//    fun registro(diretor: modelo.Diretor) {
 //        this.total += diretor.bonificacao()
 //    }
 

@@ -1,3 +1,7 @@
+package teste
+
+import modelo.ContaCorrente
+
 fun testaCopiasEReferencias() {
 
     //Exemplo de copia, no Kotlin somente tipos primitivos são copiados para um novo espaço em memoria

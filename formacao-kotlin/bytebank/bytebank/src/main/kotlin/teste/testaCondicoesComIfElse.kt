@@ -1,3 +1,5 @@
+package teste
+
 fun testaCondicoesComIfElse(saldo: Double) {
     //Utilizando o if, else if e else
     if (saldo > 0.0) {

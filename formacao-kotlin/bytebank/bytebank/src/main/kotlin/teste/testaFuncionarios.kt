@@ -1,3 +1,10 @@
+package teste
+
+import modelo.Analista
+import modelo.CalculadoraBonificacao
+import modelo.Diretor
+import modelo.Gerente
+
 fun testaFuncionarios() {
     val renato = Analista(
         nome = "Renato",
