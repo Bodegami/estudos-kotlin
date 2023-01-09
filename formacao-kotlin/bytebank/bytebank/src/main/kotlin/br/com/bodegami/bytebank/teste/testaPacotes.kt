@@ -12,7 +12,7 @@ fun testaPacotes() {
     println(palavra)
     println(palavraJava)
 
-    val cliente = Cliente("Renato", "000.000.000-00", 1)
+    val cliente = Cliente(nome ="Renato", cpf = "000.000.000-00", senha = 1)
     val clienteNovo: NovoCliente = NovoCliente()
 
 }
