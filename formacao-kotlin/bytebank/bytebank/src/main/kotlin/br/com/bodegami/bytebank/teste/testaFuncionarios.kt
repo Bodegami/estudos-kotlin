@@ -4,7 +4,7 @@ import br.com.bodegami.bytebank.modelo.Analista
 import br.com.bodegami.bytebank.modelo.CalculadoraBonificacao
 import br.com.bodegami.bytebank.modelo.Diretor
 import br.com.bodegami.bytebank.modelo.Gerente
-import modelo.*
+
 
 fun testaFuncionarios() {
     val renato = Analista(

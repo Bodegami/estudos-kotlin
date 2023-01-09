@@ -1,18 +1,25 @@
 package br.com.bodegami.bytebank.teste
 
+import br.com.bodegami.bytebank.modelo.Cliente
 import br.com.bodegami.bytebank.modelo.ContaCorrente
 import br.com.bodegami.bytebank.modelo.ContaPoupanca
 
 fun testaContasDiferentes() {
+
     val contaCorrente = ContaCorrente(
-        titular = "Renato",
+        titular = Cliente(nome = "Renato", cpf = "111.111.111-11", senha = 1000),
         numero = 1000
     )
 
     val contaPoupanca = ContaPoupanca(
-        titular = "Fran",
+        titular = Cliente(nome = "Fran", cpf = "", senha = 2),
         numero = 1001
     )
+
+    println("titular ")
+    println("nome do titular ${contaCorrente.titular.nome}")
+    println("cpf do titular ${contaCorrente.titular.cpf}")
+
 
     contaCorrente.deposita(1000.0)
     contaPoupanca.deposita(1000.0)

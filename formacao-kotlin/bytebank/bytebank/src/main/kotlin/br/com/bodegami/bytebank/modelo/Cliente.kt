@@ -3,7 +3,7 @@ package br.com.bodegami.bytebank.modelo
 import br.com.bodegami.bytebank.modelo.Autenticavel
 
 class Cliente(
-    val nome: String,
+    var nome: String,
     val cpf: String,
     private val senha: Int
 ) : Autenticavel {

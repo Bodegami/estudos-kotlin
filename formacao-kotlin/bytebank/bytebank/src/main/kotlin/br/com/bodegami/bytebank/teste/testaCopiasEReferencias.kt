@@ -1,5 +1,6 @@
 package br.com.bodegami.bytebank.teste
 
+import br.com.bodegami.bytebank.modelo.Cliente
 import br.com.bodegami.bytebank.modelo.ContaCorrente
 
 fun testaCopiasEReferencias() {
@@ -13,11 +14,14 @@ fun testaCopiasEReferencias() {
     println("numeroY $numeroY")
 
 
+    val joao = Cliente(nome = "Joao", cpf = "", senha = 1)
+    val fran = Cliente(nome = "Fran", cpf = "", senha = 2)
+
     // Exemplo de referência, no Kotlin somente objetos recebem a referência
-    val contaJoao = ContaCorrente("Joao", 1002)
+    val contaJoao = ContaCorrente(joao, 1002)
     var contaMaria = contaJoao
-    contaMaria.titular = "Maria"
-    contaJoao.titular = "Joao"
+    contaMaria.titular.nome = "Maria"
+    contaJoao.titular.nome = "Joao"
 
     println("titula conta joao: ${contaJoao.titular}")
     println("titula conta maria: ${contaMaria.titular}")

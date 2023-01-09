@@ -4,7 +4,9 @@ import br.com.bodegami.bytebank.teste.*
 
 fun main() {
 
-    testaPacotes()
+    //testaPacotes()
+    //testaFuncionarios()
+    testaContasDiferentes()
 
 }
 

@@ -1,20 +1,25 @@
 package br.com.bodegami.bytebank.teste
 
+import br.com.bodegami.bytebank.modelo.Cliente
 import br.com.bodegami.bytebank.modelo.ContaCorrente
 import br.com.bodegami.bytebank.modelo.ContaPoupanca
 
 fun testaComportamentosConta() {
-    val contaRenato = ContaCorrente(numero = 1000, titular = "Renato")
+
+    val renato = Cliente(nome = "Renato", cpf = "", senha = 1)
+    val fran = Cliente(nome = "Fran", cpf = "", senha = 2)
+
+    val contaRenato = ContaCorrente(numero = 1000, titular = renato)
     contaRenato.deposita(200.0)
 
-    println(contaRenato.titular)
+    println(contaRenato.titular.nome)
     println(contaRenato.numero)
     println(contaRenato.saldo)
 
-    val contaFran = ContaPoupanca("Fran", 1001)
+    val contaFran = ContaPoupanca(fran, 1001)
     contaFran.deposita(300.0)
 
-    println(contaFran.titular)
+    println(contaFran.titular.nome)
     println(contaFran.numero)
     println(contaFran.saldo)
 

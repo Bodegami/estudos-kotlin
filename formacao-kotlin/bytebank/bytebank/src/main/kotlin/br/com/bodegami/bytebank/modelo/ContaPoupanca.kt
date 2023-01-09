@@ -3,7 +3,7 @@ package br.com.bodegami.bytebank.modelo
 import br.com.bodegami.bytebank.modelo.Conta
 
 class ContaPoupanca(
-    titular: String,
+    titular: Cliente,
     numero: Int
 ) : Conta(
     titular = titular,
