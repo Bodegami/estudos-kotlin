@@ -78,6 +78,14 @@ package br.com.bodegami.bytebank
 // O companion object não precisa ter um nome dentro da classe em que está
 // Porém quando não declaramos o nome do companion object, por de baixo dos panos ele recebe o nome padrão 'Companion'
 
+// O Kotlin trabalha com a ideia de fazer mais coisas com menos. É o caso de quando criamos uma classe ou método e
+// implicitamente o Kotlin faz a sobrecarga deste metodo
+
+// CTRL + B ou CTRL + MOUSE DIREITO entra na implementacao de um metodo ou classe
+// O operador '?' é usado em variaveis que podem receber um valor ou não, como é o caso do nulo ou null
+// No Kotlin existe a classe Any, que na verdade é a classe mãe de todas as classes. É como a classe Object do Java
+// Assim como a classe Object do Java, a classe Any no Kotlin tem diversos métodos que são herdados nas classes filhas
+// Se quisermos criar um metodo que recebe qualquer classe como parametro, podemos utilizar a classe Any
 
 
 
