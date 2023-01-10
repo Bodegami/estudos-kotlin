@@ -67,6 +67,16 @@ package br.com.bodegami.bytebank
 // CTRL + ALT + O organiza os imports na classe
 // Podemos fazer o import de todos arquivos de um pacote atraves do *. Exemplo: import br.com.modelo.*
 // É possível utilizar alias nos imports. Exemplo: import java.lang.StringBuffer as StringBufferJava
+// É possível ter mais uma classe dentro do mesmo arquivo
+// Os object expressions são objetos anonimos que podem ter seus proprios atibutos, metodos e comportamentos
+// Object expressions podem também implementar interfaces ou herdar de outras classes
+// Já os Object declarations devem ter um nome e ele segue o padrão Singleton
+// Os Object Declarations podem ficar dentro de um arquivo (fora da funcao main) ou em classes
+// Os object declarations podem ser chamados a partir da classe onde eles estão
+// Já os Companions Objects conseguem compartilhar os seus membros com a classes onde está
+// Os Companions Objects podem ser privados, permitindo que apenas a propria classe altere o seu estado
+// O companion object não precisa ter um nome dentro da classe em que está
+// Porém quando não declaramos o nome do companion object, por de baixo dos panos ele recebe o nome padrão 'Companion'
 
 
 

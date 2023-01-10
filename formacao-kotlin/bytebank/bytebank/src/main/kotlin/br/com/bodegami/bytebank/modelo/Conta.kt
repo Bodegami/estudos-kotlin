@@ -1,7 +1,5 @@
 package br.com.bodegami.bytebank.modelo
 
-var totalContas = 0
-    private set
 abstract class Conta(
     var titular: Cliente,
     val numero: Int
@@ -12,11 +10,14 @@ abstract class Conta(
             field = valor
         }
 
-
+    companion object Contador {
+        var total: Int = 0
+            private set
+    }
 
     init {
-        println("Criando conta...")
-        totalContas++
+        println("Criando conta $total")
+        total++
     }
 
     fun deposita(valor: Double) {
