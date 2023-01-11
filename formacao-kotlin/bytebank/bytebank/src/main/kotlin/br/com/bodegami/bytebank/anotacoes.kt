@@ -103,6 +103,11 @@ package br.com.bodegami.bytebank
 // Exemplo: val numero: Int = 1 ...  numero is Int //retorna true  | numero is String // retorna false
 
 // Podemos utilizar a toString() padrão, personalizado ou raw String, que traz alguns metodos especificos para impressão
+// O equals padrão faz a comparação pela referência do objeto
+
+// Sempre que for alterar a implementacao padrao do equals, é interessante mudar também a do hashcode(), dado que o
+// o equals utiliza o hashcode por de baixo dos panos
+
 
 
 

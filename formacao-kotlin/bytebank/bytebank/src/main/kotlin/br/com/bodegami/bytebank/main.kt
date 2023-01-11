@@ -7,8 +7,8 @@ import br.com.bodegami.bytebank.teste.testaFuncionarios
 
 fun main() {
 
-    val endereco: Endereco = Endereco(logradouro = "rua xpto", complemento = "Alura")
-    val enderecoNovo = Endereco(bairro = "Vila Mariana", numero = 1000)
+    val endereco: Endereco = Endereco(logradouro = "rua xpto", complemento = "Alura", cep = "00000-000")
+    val enderecoNovo = Endereco(logradouro = "rua xpto", complemento = "Alura", cep = "00000-000")
 
     println(endereco.equals(enderecoNovo))
 
