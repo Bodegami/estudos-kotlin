@@ -11,6 +11,11 @@ class CalculadoraBonificacao {
         this.total += funcionario.bonificacao()
     }
 
+//    fun registro(funcionario: Any) {
+//        if (funcionario is Funcionario)
+//            this.total += funcionario.bonificacao()
+//    }
+
 //    fun registro(gerente: modelo.Gerente) {
 //        this.total += gerente.bonificacao()
 //    }

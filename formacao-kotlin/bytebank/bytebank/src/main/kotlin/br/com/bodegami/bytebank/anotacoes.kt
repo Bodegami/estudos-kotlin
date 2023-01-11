@@ -84,12 +84,23 @@ package br.com.bodegami.bytebank
 // CTRL + B ou CTRL + MOUSE DIREITO entra na implementacao de um metodo ou classe
 // O operador '?' é usado em variaveis que podem receber um valor ou não, como é o caso do nulo ou null
 // No Kotlin existe a classe Any, que na verdade é a classe mãe de todas as classes. É como a classe Object do Java
+// Em tempo de compilação a classe Any representa ela mesma, já em execução ela vira a classe Object do Java
+// Inclusive não é recomendado o uso da classe Object no Kotlin, para isso podemos usar a classe Any
 // Assim como a classe Object do Java, a classe Any no Kotlin tem diversos métodos que são herdados nas classes filhas
 // Se quisermos criar um metodo que recebe qualquer classe como parametro, podemos utilizar a classe Any
 
+// No Kotlin, em tempo de compilação, os tipos primitivos são considerados classes. Agora em tempo de execução,
+// são tipos primitivos
 
+// No Kotlin, temos o tipo Unit que é como o tipo void em Java
+// No Kotlin, tudo é considerado um objeto. Mesmo a classe Unit que é como o void, é considerado um objeto
 
+// No Kotlin, para fazer um cast de um objeto usamos a palavra 'as' seguido da classe. Ex: funcionario as Funcionario
+// Para saber mais sobre o cast em Kotlin, vale a pena pesquisar sobre o 'smart cast' e o 'cast expression'
 
+// No Kotlin, para verificar se um objeto pode ser de um determinado tipo, podemos usar a palavra reservada 'is'
+// Alem disso, o 'is' faz primeiro a verificação e sendo possível, ele já faz o cast para o tipo apontado
+// Exemplo: val numero: Int = 1 ...  numero is Int //retorna true  | numero is String // retorna false
 
 
 
