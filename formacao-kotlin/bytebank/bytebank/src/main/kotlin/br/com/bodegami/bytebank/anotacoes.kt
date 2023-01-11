@@ -102,6 +102,9 @@ package br.com.bodegami.bytebank
 // Alem disso, o 'is' faz primeiro a verificação e sendo possível, ele já faz o cast para o tipo apontado
 // Exemplo: val numero: Int = 1 ...  numero is Int //retorna true  | numero is String // retorna false
 
+// Podemos utilizar a toString() padrão, personalizado ou raw String, que traz alguns metodos especificos para impressão
+
+
 
 
 
