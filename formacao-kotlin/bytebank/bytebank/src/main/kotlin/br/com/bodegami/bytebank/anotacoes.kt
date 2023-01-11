@@ -113,5 +113,10 @@ package br.com.bodegami.bytebank
 // No Kotlin, tanto o Byte, Short, Int, Long, Double e Float são filhos da classe mãe Number
 // Lembrando que tipos primitivos em tempo de compilação são objetos, já em execução são tipos primitivos
 
+// Diferente do Number, quando criamos uma variavel do tipo String e ela recebe um novo valor, a variavel passa
+// apontar para um novo objeto contendo o valor informado.
+// Para comparações do tipo Char, devemos usar as aspas simples. Exemplo: println('a' == 'b') -> retorna false
+// Resumindo, Strings são objetos, imutaveis e quando atribuirmos um novo valor não será uma cópia e sim um novo objeto
+
 
 
