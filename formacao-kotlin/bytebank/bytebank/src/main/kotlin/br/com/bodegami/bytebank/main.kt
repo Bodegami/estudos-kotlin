@@ -3,23 +3,28 @@ package br.com.bodegami.bytebank
 import br.com.bodegami.bytebank.modelo.Endereco
 import br.com.bodegami.bytebank.teste.testaAny
 import br.com.bodegami.bytebank.teste.testaFuncionarios
+import br.com.bodegami.bytebank.teste.testaMetodosHerdadosDeAny
 
 
 fun main() {
 
-    val endereco: Endereco = Endereco(logradouro = "rua xpto", complemento = "Alura", cep = "00000-000")
-    val enderecoNovo = Endereco(logradouro = "rua xpto", complemento = "Alura", cep = "00000-000")
+    var x: Int = 15
+    val y: Double = 14.5
+    var z = x
 
-    println(endereco.equals(enderecoNovo))
+    z += 10
 
-    println(endereco.hashCode())
-    println(enderecoNovo.hashCode())
 
-    println(endereco.toString())
-    println(enderecoNovo.toString())
+    teste(x)
+    teste(y)
 
-    println("${endereco.javaClass}@${java.lang.Integer.toHexString(endereco.hashCode())}")
+    println(z)
+    println(x.toDouble())
+    println(y.toLong())
+}
 
+fun teste(valor: Number) {
+    println(valor)
 }
 
 

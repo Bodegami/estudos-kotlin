@@ -108,9 +108,10 @@ package br.com.bodegami.bytebank
 // Sempre que for alterar a implementacao padrao do equals, é interessante mudar também a do hashcode(), dado que o
 // o equals utiliza o hashcode por de baixo dos panos
 
+// ----------------------------------------------ARTIGOS LIDOS-------------------------------------------------->
 
-
-
+// No Kotlin, tanto o Byte, Short, Int, Long, Double e Float são filhos da classe mãe Number
+// Lembrando que tipos primitivos em tempo de compilação são objetos, já em execução são tipos primitivos
 
 
 
