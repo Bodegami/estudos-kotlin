@@ -131,3 +131,6 @@ package br.com.bodegami.bytebank
 // Além disso, é possível mudar o valor dos atributos simplemente passando os novos valores como argumento.
 // Ex: data class Pessoa(val nome:String) ... val pessoa = Pessoa("Renato") ... val pessoa2 = pessoa.copy("Fran")
 
+// ----------------------------------------------MODULO 4-------------------------------------------------->
+
+// As pilhas de execução em Kotlin funcionam exatamente igual em Java.
