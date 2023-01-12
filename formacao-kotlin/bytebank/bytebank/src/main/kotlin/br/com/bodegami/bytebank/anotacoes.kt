@@ -118,5 +118,16 @@ package br.com.bodegami.bytebank
 // Para comparações do tipo Char, devemos usar as aspas simples. Exemplo: println('a' == 'b') -> retorna false
 // Resumindo, Strings são objetos, imutaveis e quando atribuirmos um novo valor não será uma cópia e sim um novo objeto
 
-
+// Podemos usar um tipo de classe chamado "data class" para guardar estado. Exemplo: data class Pessoa(val nome: String)
+// Além disso a 'data class' nos fornece alguns metodos já implementados como toString(), equals(), hashcode() e etc.
+// Um ponto de atenção que para usar a 'data class' o construtor primario sempre deve ter parametros e não argumentos.
+// E os parametros passados no construtor primario que serão utilizados na implementação dos metodos herdados.
+// Nos podemos tb utilizar o 'destructing declarations' em classes do tipo 'data class'. Exemplo:
+// val renato = Pessoa("Renato", 35)  ...   val (nome, idade) = renato
+// Podemos implementar o 'destructing declarations' em classes normais. Para isso precisamos criar um metodo do tipo
+// operator e especificar o seu retorno. Ex: class Pessoa(val nome: String) { operator fun component1() = this.nome }
+// O conceito que engloba o 'destructing declarations' é conhecido como 'components function'
+// As 'data class' também fornecem um metodo chamado 'copy' que basicamente faz a copia da propria referencia.
+// Além disso, é possível mudar o valor dos atributos simplemente passando os novos valores como argumento.
+// Ex: data class Pessoa(val nome:String) ... val pessoa = Pessoa("Renato") ... val pessoa2 = pessoa.copy("Fran")
 
