@@ -7,7 +7,12 @@ import br.com.bodegami.bytebank.teste.*
 fun main() {
 
     println("inicio main")
-    10/0
+    try {
+        10/0
+    } catch(e: ArithmeticException) {
+        println("ArithmeticException foi pegada!")
+    }
+
     funcao1()
     println("fim main")
 
@@ -15,7 +20,12 @@ fun main() {
 
 fun funcao1() {
     println("inicio funcao1")
-    funcao2()
+    try {
+        funcao2()
+    } catch (e: ClassCastException) {
+        println("ClassCastException foi pegada!")
+    }
+
     println("fim funcao1")
 }
 

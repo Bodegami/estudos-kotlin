@@ -135,3 +135,5 @@ package br.com.bodegami.bytebank
 
 // As pilhas de execução em Kotlin funcionam exatamente igual em Java.
 // O depurador funciona exatamente igual em Java.
+// No Kotlin, quando um programa é executado e depois finalizado, no console ele exibe um 'exit code'. Quando esse
+// valor é 0, indica que o programa executou como esperado. Porém quando o valor é 1 ele finalizou com erro.
