@@ -19,7 +19,9 @@ fun funcao1() {
 
 fun funcao2() {
     println("inicio funcao2")
-    for (i in 1..5) println(i)
+    for (i in 1..5)  {
+        println(i)
+    }
     println("fim funcao2")
 }
 

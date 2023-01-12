@@ -134,3 +134,4 @@ package br.com.bodegami.bytebank
 // ----------------------------------------------MODULO 4-------------------------------------------------->
 
 // As pilhas de execução em Kotlin funcionam exatamente igual em Java.
+// O depurador funciona exatamente igual em Java.
