@@ -137,3 +137,4 @@ package br.com.bodegami.bytebank
 // O depurador funciona exatamente igual em Java.
 // No Kotlin, quando um programa é executado e depois finalizado, no console ele exibe um 'exit code'. Quando esse
 // valor é 0, indica que o programa executou como esperado. Porém quando o valor é 1 ele finalizou com erro.
+// Ao capturar uma Exception, podemos chamar o printStackTrace que retorna as informações do cause, message e stacktrace
