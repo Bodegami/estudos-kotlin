@@ -7,12 +7,28 @@ import br.com.bodegami.bytebank.teste.*
 fun main() {
 
     println("inicio main")
-    try {
-        10/0
-    } catch(e: ArithmeticException) {
-        println("ArithmeticException foi pegada!")
+    val entrada: String = "1.0"
+
+    //val valor: Double? = try { entrada.toDouble() } catch(e: NumberFormatException) { null }
+    val valorRecebido: Double? = try {
+        entrada.toDouble()
+    } catch (e: NumberFormatException) {
+        println("Problema na conversão")
+        e.printStackTrace()
+        null
     }
 
+    val valorComTaxa: Double? = if (valorRecebido != null) {
+        valorRecebido + 0.1
+    } else {
+        null
+    }
+
+    if (valorComTaxa != null) {
+        println("valor recebido: $valorComTaxa")
+    } else {
+        println("valor inválido!!")
+    }
     funcao1()
     println("fim main")
 

@@ -138,3 +138,9 @@ package br.com.bodegami.bytebank
 // No Kotlin, quando um programa é executado e depois finalizado, no console ele exibe um 'exit code'. Quando esse
 // valor é 0, indica que o programa executou como esperado. Porém quando o valor é 1 ele finalizou com erro.
 // Ao capturar uma Exception, podemos chamar o printStackTrace que retorna as informações do cause, message e stacktrace
+
+// É possivel criar uma variavel que executa um Try Expression e retorna um valor.
+// Exemplo: val a: Int? = try { parseInt(input) } catch (e: NumberFormatException) { null }
+// Note que a variavel a pode receber um Int ou null
+
+// Também é possivel utilizar a abordagem do try Expression com o If
