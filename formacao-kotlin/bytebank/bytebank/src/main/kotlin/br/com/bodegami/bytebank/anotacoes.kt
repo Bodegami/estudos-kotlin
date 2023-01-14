@@ -155,3 +155,20 @@ package br.com.bodegami.bytebank
 // var endereco: Endereco? = null .... endereco!!.logradouro
 // Quando seguimos o exemplo do codigo acima que, primeiro indicamos a variavel pode receber nulo e depois
 // indicamos que aquele atributo não é nulo, o kotlin lança a 'KotlinNullPointerException'
+
+// No Kotlin temos o Safe Call Operator, que verifica se uma variavel é do tipo nulo. Se for do tipo nulo ela devolve
+// nulo ou se não devolve o valor. Exemplo: val a: String? = null ... println(a?.length)
+// No codigo acima, se a variavel a for nula devolve nulo, senao chama o metodo length
+
+// Porem, quando fazemos uma chamada com 'safe call', caso tenha mais encadeamentos, precisamos indicar que esse valores
+// podem ser nulos. Ex: val a: Endereco? = null ... a?.logradouro?.length?.toInt()
+// Note que temos que fazer o safe call para cada novo encadeamento na chamada do metodo
+
+// Outra abordagem para uso de 'Safe call' é o 'Let' que também é conhecido como 'Scope Functions'.
+// Ao usar o 'Let', utilizamos a palavra chave 'it' para referenciar ao proprio objeto
+// Ex: val logradouro: String? = "texto" ... logradouro.let { println(it?.length) }
+// A palavra reservada 'let' também pode ser substituida por outro nome. Exemplo:
+// Ex: val logradouro: String? = "texto" ... logradouro.let { endereco: String -> println(endereco?.length) }
+// Um detalhe ao utilizar o 'let' é que ele ignora a propriedade, caso ela seja nula.
+// Outra vantagem do 'let' é que quando o utilizamos com o safe call, os metodos encadeados dentro do bloco não precisam
+// chamar o safe call. Ex: val rua: String? = "texto" ... rua?.let { it.length.toint() }
