@@ -146,3 +146,4 @@ package br.com.bodegami.bytebank
 // Também é possivel utilizar a abordagem do try Expression com o If
 // A classe mãe das Exceptions é a Throwable. Suas classes filhas são 'Exception' e 'Error'
 // A classe 'Error' é para casos de erro na JVM. É uma boa prática evitar usar a 'Error'
+// Sempre que for capturar varios tipos de exception, é interessante deixar o tipo mais genérico por ultimo
