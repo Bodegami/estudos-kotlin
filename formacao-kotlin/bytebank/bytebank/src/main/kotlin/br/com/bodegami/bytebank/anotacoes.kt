@@ -172,3 +172,14 @@ package br.com.bodegami.bytebank
 // Um detalhe ao utilizar o 'let' é que ele ignora a propriedade, caso ela seja nula.
 // Outra vantagem do 'let' é que quando o utilizamos com o safe call, os metodos encadeados dentro do bloco não precisam
 // chamar o safe call. Ex: val rua: String? = "texto" ... rua?.let { it.length.toint() }
+
+// Em alguns casos podemos utlizar o 'elvis operator' para indicar que, caso um valor seja nulo, retorne um outro valor
+// O elvis operator é chamado usando o conjunto de caracteres '?:'
+// Ex: enderecoNulo?.let { val tamanhoComplemento: Int = it.complemento?.lenght ?: 0 }
+// Note que no exemplo acima, caso o complemento seja nulo, ele vai retornar o valor 0
+
+// O safe call também pode ser usado com o cast com a sintaxe 'as?'. Essa é uma das formas seguras de tebtar fazer o
+// cast de um valor. Ex: val numero: Int? = "10" as? Int
+// Caso ele não consiga fazer o cast, ele retorna nulo
+
+
