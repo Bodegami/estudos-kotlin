@@ -147,3 +147,11 @@ package br.com.bodegami.bytebank
 // A classe mãe das Exceptions é a Throwable. Suas classes filhas são 'Exception' e 'Error'
 // A classe 'Error' é para casos de erro na JVM. É uma boa prática evitar usar a 'Error'
 // Sempre que for capturar varios tipos de exception, é interessante deixar o tipo mais genérico por ultimo
+
+// Para indicar que uma variavel ou atributo pode receber nulo, indicamos colocando o '?' ao lado do tipo de retorno.
+// Ex: var endereco: Endereco? = null .... dessa forma indicamos que a variavel pode receber Endereco() ou nulo
+
+// Para indicar que ao chamar uma variavel ou atributo a mesma não pode ser nula, utilizamos o '!!'. Exemplo:
+// var endereco: Endereco? = null .... endereco!!.logradouro
+// Quando seguimos o exemplo do codigo acima que, primeiro indicamos a variavel pode receber nulo e depois
+// indicamos que aquele atributo não é nulo, o kotlin lança a 'KotlinNullPointerException'
