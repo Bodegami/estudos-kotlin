@@ -1,78 +1,30 @@
 package br.com.bodegami.bytebank
 
-import br.com.bodegami.bytebank.exception.FalhaAutenticacaoException
-import br.com.bodegami.bytebank.exception.SaldoInsuficienteException
-import br.com.bodegami.bytebank.modelo.Endereco
-import br.com.bodegami.bytebank.teste.*
-
-
 fun main() {
 
-    var enderecoNulo: Endereco? = null
-    val enderecoNaoNulo: Endereco? = Endereco(logradouro = "rua vergueiro", complemento = "predio")
-    val enderecoNaoNuloComplementoNulo: Endereco? = Endereco(logradouro = "rua vergueiro")
-    println(enderecoNulo?.logradouro)
-    println(enderecoNaoNulo?.logradouro?.length)
+    val idade1 = 25
+    val idade2 = 19
+    val idade3 = 33
+    val idade4 = 20
 
-    enderecoNaoNulo.let { println(it?.logradouro) }
-    enderecoNulo?.let { endereco: Endereco -> println(endereco.logradouro) }
-
-    enderecoNulo?.let { endereco: Endereco ->
-        teste(endereco)
-        println("endereco nulo")
+    val maiorIdade = if (idade1 > idade2 && idade1 > idade3 && idade1 > idade4) {
+        idade1
+    } else if (idade2 > idade3 && idade1 > idade4) {
+        idade2
+    } else if (idade3 > idade4){
+        idade3
+    } else {
+        idade4
     }
 
-    enderecoNaoNulo?.let { endereco: Endereco ->
-        teste(endereco).also { println("endereco não nulo") }
-    }
+    println(maiorIdade)
 
-    enderecoNaoNulo?.let {
-        println(it.logradouro.length)
-        val tamanhoComplemento: Int = it.complemento?.length ?: 0
-        println(tamanhoComplemento)
-    }
+    val idades = IntArray(4)
+    idades[0] = 25
+    idades[1] = 19
+    idades[2] = 33
+    idades[3] = 20
 
-//    enderecoNaoNuloComplementoNulo?.let {
-//        println(it.logradouro.length)
-//        val tamanhoComplemento: Int = it.complemento?.length ?: throw IllegalArgumentException("complemento vazio!")
-//        println(tamanhoComplemento)
-//    }
-
-    val numero1: Int = 10
-    val numero2: String = "20"
-    testeCast(numero1)
-    testeCast(numero2)
+    
 
 }
-
-fun teste(endereco: Endereco) {
-    println(endereco)
-}
-
-fun testeCast(valor: Any) {
-    val numero: Int? = valor as? Int
-    println(numero)
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

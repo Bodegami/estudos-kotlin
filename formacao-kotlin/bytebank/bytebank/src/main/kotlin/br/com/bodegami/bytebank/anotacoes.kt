@@ -182,4 +182,6 @@ package br.com.bodegami.bytebank
 // cast de um valor. Ex: val numero: Int? = "10" as? Int
 // Caso ele não consiga fazer o cast, ele retorna nulo
 
+// ----------------------------------------------MODULO 5-------------------------------------------------->
 
+// Sempre criar um array, é necessário passar como argumento o tamanho dele
