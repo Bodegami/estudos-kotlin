@@ -1,5 +1,6 @@
 package br.com.bodegami.bytebank.teste
 
+import br.com.bodegami.bytebank.exception.SaldoInsuficienteException
 import br.com.bodegami.bytebank.modelo.Cliente
 import br.com.bodegami.bytebank.modelo.ContaCorrente
 import br.com.bodegami.bytebank.modelo.ContaPoupanca
@@ -49,10 +50,14 @@ fun testaComportamentosConta() {
     println(contaFran.saldo)
 
     println("transferencia da conta da Fran para o Renato:")
-    if (contaFran.transfere(valor = 300.0, destino = contaRenato)) {
+
+    try {
+        contaFran.transfere(valor = 300.0, destino = contaRenato)
         println("Transferencia sucedida")
-    } else {
+    } catch (e: SaldoInsuficienteException) {
         println("Falha na transferencia")
+        println("Saldo insuficiente")
+        e.printStackTrace()
     }
 
     println("Saldo da conta do Renato: ${contaRenato.saldo}")

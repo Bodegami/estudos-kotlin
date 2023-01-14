@@ -1,5 +1,7 @@
 package br.com.bodegami.bytebank.modelo
 
+import br.com.bodegami.bytebank.exception.SaldoInsuficienteException
+
 abstract class Conta(
     var titular: Cliente,
     val numero: Int
@@ -28,14 +30,13 @@ abstract class Conta(
 
     abstract fun saca(valor: Double)
 
-    fun transfere(valor: Double, destino: Conta): Boolean {
-        if (this.saldo >= valor) {
-            this.saca(valor)
-            destino.deposita(valor)
-            return true
+    fun transfere(valor: Double, destino: Conta) {
+        if (saldo < valor) {
+            throw SaldoInsuficienteException()
         }
 
-        return false
+        this.saca(valor)
+        destino.deposita(valor)
     }
 
 }

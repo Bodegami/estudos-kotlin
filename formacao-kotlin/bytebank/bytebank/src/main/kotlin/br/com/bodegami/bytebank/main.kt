@@ -8,7 +8,8 @@ import br.com.bodegami.bytebank.teste.*
 fun main() {
 
     println("inicio main")
-    funcao1()
+    //funcao1()
+    testaComportamentosConta()
     println("fim main")
 }
 
