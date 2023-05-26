@@ -205,3 +205,6 @@ package br.com.bodegami.bytebank
 // Podemos usar a expression function "fold" como o "reduce". A maior diferença é que o fold recebe um valor inicial.
 // Ex: idades.fold(totalDeIdades) { acumulador, idade -> acumulador + (idade + 1) }
 
+// Podemos encadear expression functions sem a necessidade de criar variaveis temporarias.
+// Ex: var idades = ArrayOf(22, 18, 15)  idades.sorted().take(2).toTypedArray().media()
+
