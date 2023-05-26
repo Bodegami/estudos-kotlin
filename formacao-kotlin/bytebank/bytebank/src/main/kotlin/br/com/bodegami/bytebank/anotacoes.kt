@@ -208,3 +208,10 @@ package br.com.bodegami.bytebank
 // Podemos encadear expression functions sem a necessidade de criar variaveis temporarias.
 // Ex: var idades = ArrayOf(22, 18, 15)  idades.sorted().take(2).toTypedArray().media()
 
+// Assim como no Java, não é possível criar uma lista de tipos primitivos. A interface List trabalha apenas com objetos
+// ou classes Wrapper
+// Podemos usar a mutableListOf<>() para criar uma List do tipo informado nos generics
+// Diferente dos Arrays, a List nos possibilita o usa de algumas funcoes como add, remove e etc
+// Diferente dos Arrays, a List é mutavel e não precisamos definir o seu tamanho no momento de criacao de uma List
+
+
