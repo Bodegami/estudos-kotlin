@@ -218,7 +218,11 @@ package br.com.bodegami.bytebank
 // delimitados pelo separador. val textoFormatado = this.joinToString(separator = "\n") {" - ${it.titulo}" }
 
 // Para ordernar um List de uma classe que criamos, essa classe precisa extender o tipo Comparable, igual ao Java
-// Mas o Kotlin tem uma forma mais simples de ordenar, que seria chamando a expression language 'sortedBy'
+// Mas o Kotlin tem uma forma mais simples de ordenar, que seria chamando a expression function 'sortedBy'
 // Ex: var livros = List<Livro>(livro1, livro2, livro3) ... livros.sortedBy{ it.titulo }
 // Dessa forma, a nossa classe Livro não precisa extender de Comparable
+
+// Podemos chama a função 'filter' apartir do objeto que representa nossa lista de livros
+// Ex: livros.filter { it.autor == "João Guimarães Rosa" }
+// Assim como as outras expression functions, 'filter' também pode encadear outras funções
 

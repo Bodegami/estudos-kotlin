@@ -31,9 +31,9 @@ fun main() {
     val livros = mutableListOf<Livro>(livro1, livro2, livro3, livro4)
     livros.add(
         Livro(
-            titulo = "Sagarana",
+            titulo = "Grande Sertão: Veredas",
             autor = "João Guimarães Rosa",
-            anoPublicacao = 1946
+            anoPublicacao = 1956
         )
     )
 
@@ -51,7 +51,23 @@ fun main() {
     val ordenadoPorTitulo = livros.sortedBy { it.titulo }
     ordenadoPorTitulo.imprimeComMarcadores()
 
-    val ordenadoPorAutor = livros.sortedBy { it.autor }.imprimeComMarcadores()
+    livros.sortedBy { it.autor }.imprimeComMarcadores()
+
+    //filtrando dados de uma lista
+    livros.add(
+        Livro(
+            titulo = "Sagarana",
+            autor = "João Guimarães Rosa",
+            anoPublicacao = 1946
+        )
+    )
+
+    val listaDeTitulos: List<String> = livros
+        .filter { it.autor.startsWith("João") }
+        .sortedBy { it.anoPublicacao }
+        .map { it.titulo }
+
+    println(listaDeTitulos)
 
 }
 
