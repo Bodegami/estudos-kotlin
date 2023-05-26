@@ -192,3 +192,5 @@ package br.com.bodegami.bytebank
 // O operador "in" opera de forma diferente dependendo do contexto em que está inserido.
 // O "in" no if verifica se o elemento está dentro de uma serie, como o metodo contains() do Java. Ex: if (5 in 1..10)
 // O "in" no for percorre todos elementos da serie procurando pelo valor. Ex: for (2 in 1..10)
+
+// A palavra reservada "vararg" representa um conjunto de valores dinamico. Como a expressao "..." no java
