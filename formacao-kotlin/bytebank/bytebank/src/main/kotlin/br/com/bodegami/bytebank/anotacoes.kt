@@ -173,14 +173,14 @@ package br.com.bodegami.bytebank
 // Outra vantagem do 'let' é que quando o utilizamos com o safe call, os metodos encadeados dentro do bloco não precisam
 // chamar o safe call. Ex: val rua: String? = "texto" ... rua?.let { it.length.toint() }
 
-// Em alguns casos podemos utlizar o 'elvis operator' para indicar que, caso um valor seja nulo, retorne um outro valor
+// Em alguns casos podemos utlizar o 'elvis operator' para indicar que, caso um valor seja nulo, retorne outro valor
 // O elvis operator é chamado usando o conjunto de caracteres '?:'
 // Ex: enderecoNulo?.let { val tamanhoComplemento: Int = it.complemento?.lenght ?: 0 }
 // Note que no exemplo acima, caso o complemento seja nulo, ele vai retornar o valor 0
 
-// O safe call também pode ser usado com o cast com a sintaxe 'as?'. Essa é uma das formas seguras de tebtar fazer o
-// cast de um valor. Ex: val numero: Int? = "10" as? Int
-// Caso ele não consiga fazer o cast, ele retorna nulo
+// O safe call também pode ser usado com o 'cast' com a sintaxe 'as?'. Essa é uma das formas seguras de tebtar fazer o
+// 'cast' de um valor. Ex: val numero: Int? = "10" as? Int
+// Caso ele não consiga fazer o 'cast', ele retorna nulo
 
 // ----------------------------------------------MODULO 5-------------------------------------------------->
 
@@ -190,8 +190,8 @@ package br.com.bodegami.bytebank
 // Podemos usar a funcao "1.until(10)" que vai devolver um objeto IntRange de 1 ATÉ 10. Ex: de 1 a 9
 
 // O operador "in" opera de forma diferente dependendo do contexto em que está inserido.
-// O "in" no if verifica se o elemento está dentro de uma serie, como o metodo contains() do Java. Ex: if (5 in 1..10)
-// O "in" no for percorre todos elementos da serie procurando pelo valor. Ex: for (2 in 1..10)
+// O "in" no if verifica se o elemento está dentro de uma série, como o metodo contains() do Java. Ex: if (5 in 1..10)
+// O "in" no for percorre todos elementos da série procurando pelo valor. Ex: for (2 in 1..10)
 
 // A palavra reservada "vararg" representa um conjunto de valores dinamico. Como a expressao "..." no java
 
@@ -200,7 +200,7 @@ package br.com.bodegami.bytebank
 // uma funcao de soma para um array de BigDecimal.
 // Ex: Array<BigDecimal>.soma(): BigDecimal { return this.reduce { acumulador, valor -> acumulador + valor }
 // No exemplo acima usamos a funcao reduce que permite reduzir todos valores de um array a um elemento, seja somando,
-// multiplicando, subtraindo e etc.
+// multiplicando, subtraindo, etc.
 
 // Podemos usar a expression function "fold" como o "reduce". A maior diferença é que o fold recebe um valor inicial.
 // Ex: idades.fold(totalDeIdades) { acumulador, idade -> acumulador + (idade + 1) }
@@ -208,10 +208,11 @@ package br.com.bodegami.bytebank
 // Podemos encadear expression functions sem a necessidade de criar variaveis temporarias.
 // Ex: var idades = ArrayOf(22, 18, 15)  idades.sorted().take(2).toTypedArray().media()
 
-// Assim como no Java, não é possível criar uma lista de tipos primitivos. A interface List trabalha apenas com objetos
+// Assim como no Java, não é possível criar uma lista de tipos primitivos. A 'interface' List trabalha apenas com objetos
 // ou classes Wrapper
 // Podemos usar a mutableListOf<>() para criar uma List do tipo informado nos generics
 // Diferente dos Arrays, a List nos possibilita o usa de algumas funcoes como add, remove e etc
 // Diferente dos Arrays, a List é mutavel e não precisamos definir o seu tamanho no momento de criacao de uma List
-
+// A 'interface' List provem um metodo chamadado "joinToString" que permite criar uma String com os elementos da lista
+// delimitados pelo separador. val textoFormatado = this.joinToString(separator = "\n") {" - ${it.titulo}" }
 
