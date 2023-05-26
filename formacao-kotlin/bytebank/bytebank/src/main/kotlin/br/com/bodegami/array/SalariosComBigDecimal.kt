@@ -5,12 +5,13 @@ import java.math.RoundingMode
 
 fun main() {
 
-    val salarios = Array<BigDecimal>(5) { BigDecimal.ZERO }
-    salarios[0] = "1500.55".toBigDecimal()
-    salarios[1] = "2000.00".toBigDecimal()
-    println(salarios.contentToString())
-
-    println()
+//    FORMA NORMAL
+//    val salarios = Array<BigDecimal>(5) { BigDecimal.ZERO }
+//    salarios[0] = "1500.55".toBigDecimal()
+//    salarios[1] = "2000.00".toBigDecimal()
+//    println(salarios.contentToString())
+//
+//    println()
 
     val salariosComArrayCustomizado = bigDecimalArrayOf("1500.55", "2000.00", "5000.00", "10000.00")
     println(salariosComArrayCustomizado.contentToString())
@@ -23,6 +24,13 @@ fun main() {
 
     val gastoInicial = salariosComAumento.somatoria()
     println(gastoInicial)
+
+    //Calcula sala
+    val meses = 6.toBigDecimal()
+    val gastoTotal = salariosComAumento.fold(gastoInicial) { acumulador, salario ->
+        acumulador + (salario * meses).setScale(2, RoundingMode.UP)
+    }
+    println(gastoTotal)
 
 
 }
@@ -41,6 +49,7 @@ fun bigDecimalArrayOf(vararg valores: String): Array<BigDecimal> {
     }
 }
 
+//Criando uma expression function para o nosso array de BigDecimal
 fun Array<BigDecimal>.somatoria(): BigDecimal {
     return this.reduce { acumulador, valor ->
         acumulador + valor

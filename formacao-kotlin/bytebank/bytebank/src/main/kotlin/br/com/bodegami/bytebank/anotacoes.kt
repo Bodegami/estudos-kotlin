@@ -202,3 +202,6 @@ package br.com.bodegami.bytebank
 // No exemplo acima usamos a funcao reduce que permite reduzir todos valores de um array a um elemento, seja somando,
 // multiplicando, subtraindo e etc.
 
+// Podemos usar a expression function "fold" como o "reduce". A maior diferença é que o fold recebe um valor inicial.
+// Ex: idades.fold(totalDeIdades) { acumulador, idade -> acumulador + (idade + 1) }
+
