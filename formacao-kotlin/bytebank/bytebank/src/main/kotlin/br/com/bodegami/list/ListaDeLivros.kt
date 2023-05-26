@@ -40,11 +40,22 @@ fun main() {
     livros.imprimeComMarcadores()
 
     livros.remove(livro1)
+
     livros.imprimeComMarcadores()
+
+    //ordenando um List
+    // sorted() devolve um tipo List. Para chamar o metodo imprimeComMarcadores, alteramos de MutableList para List.
+    val ordenadoAnoPublicacao = livros.sorted()
+    ordenadoAnoPublicacao.imprimeComMarcadores()
+
+    val ordenadoPorTitulo = livros.sortedBy { it.titulo }
+    ordenadoPorTitulo.imprimeComMarcadores()
+
+    val ordenadoPorAutor = livros.sortedBy { it.autor }.imprimeComMarcadores()
 
 }
 
-fun MutableList<Livro>.imprimeComMarcadores() {
+fun List<Livro>.imprimeComMarcadores() {
     val textoFormatado = this.joinToString(separator = "\n") {
         " - ${it.titulo} de ${it.autor}"
     }

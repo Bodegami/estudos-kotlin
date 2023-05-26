@@ -213,6 +213,12 @@ package br.com.bodegami.bytebank
 // Podemos usar a mutableListOf<>() para criar uma List do tipo informado nos generics
 // Diferente dos Arrays, a List nos possibilita o usa de algumas funcoes como add, remove e etc
 // Diferente dos Arrays, a List é mutavel e não precisamos definir o seu tamanho no momento de criacao de uma List
+
 // A 'interface' List provem um metodo chamadado "joinToString" que permite criar uma String com os elementos da lista
 // delimitados pelo separador. val textoFormatado = this.joinToString(separator = "\n") {" - ${it.titulo}" }
+
+// Para ordernar um List de uma classe que criamos, essa classe precisa extender o tipo Comparable, igual ao Java
+// Mas o Kotlin tem uma forma mais simples de ordenar, que seria chamando a expression language 'sortedBy'
+// Ex: var livros = List<Livro>(livro1, livro2, livro3) ... livros.sortedBy{ it.titulo }
+// Dessa forma, a nossa classe Livro não precisa extender de Comparable
 
