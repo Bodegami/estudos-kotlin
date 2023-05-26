@@ -185,3 +185,10 @@ package br.com.bodegami.bytebank
 // ----------------------------------------------MODULO 5-------------------------------------------------->
 
 // Sempre criar um array, é necessário passar como argumento o tamanho dele
+// As funcoes "1.rangeTo(10)" e "1..10" retornam um objeto IntRange que é um array do tipo numerico seguindo uma serie
+// Alem disso as duas funcoes citadas acima incluem tanto o argumento inicial e o final no array. EX: 1 e 10
+// Podemos usar a funcao "1.until(10)" que vai devolver um objeto IntRange de 1 ATÉ 10. Ex: de 1 a 9
+
+// O operador "in" opera de forma diferente dependendo do contexto em que está inserido.
+// O "in" no if verifica se o elemento está dentro de uma serie, como o metodo contains() do Java. Ex: if (5 in 1..10)
+// O "in" no for percorre todos elementos da serie procurando pelo valor. Ex: for (2 in 1..10)
