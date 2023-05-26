@@ -194,3 +194,11 @@ package br.com.bodegami.bytebank
 // O "in" no for percorre todos elementos da serie procurando pelo valor. Ex: for (2 in 1..10)
 
 // A palavra reservada "vararg" representa um conjunto de valores dinamico. Como a expressao "..." no java
+
+// Extension funcions são funcoes de um objeto. Ex: String nome = "ana"; ana.toUpperCase()
+// Podemos criar uma funcao que se comporta como uma extension funcion, como no exemplo abaixo onde criamos
+// uma funcao de soma para um array de BigDecimal.
+// Ex: Array<BigDecimal>.soma(): BigDecimal { return this.reduce { acumulador, valor -> acumulador + valor }
+// No exemplo acima usamos a funcao reduce que permite reduzir todos valores de um array a um elemento, seja somando,
+// multiplicando, subtraindo e etc.
+
