@@ -231,3 +231,6 @@ package br.com.bodegami.bytebank
 // A interface list possui uma funcao 'groupBy' que recebe um parametro como argumento. Essa funcao
 // retorna um 'Map' onde a chave é o parametro informado. Ex: listaLivros.groupBy { it.autor }
 
+// Cuidado ao usar listas mutaveis pois mesmo criando uma nova variavel apontando para o mesmo objeto que outra
+// variavel, qualquer manipulação ira afetar as duas variaveis
+
