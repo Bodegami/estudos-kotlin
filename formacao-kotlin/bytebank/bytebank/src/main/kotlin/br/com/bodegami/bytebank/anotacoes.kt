@@ -228,3 +228,6 @@ package br.com.bodegami.bytebank
 
 // O Kotlin tem um funcao na nativa para filtrar elementos nulos de uma lista. Ex: lista.filterNotNull()
 
+// A interface list possui uma funcao 'groupBy' que recebe um parametro como argumento. Essa funcao
+// retorna um 'Map' onde a chave é o parametro informado. Ex: listaLivros.groupBy { it.autor }
+
