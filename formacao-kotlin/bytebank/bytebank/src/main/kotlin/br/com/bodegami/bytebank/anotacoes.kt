@@ -226,3 +226,5 @@ package br.com.bodegami.bytebank
 // Ex: livros.filter { it.autor == "João Guimarães Rosa" }
 // Assim como as outras expression functions, 'filter' também pode encadear outras funções
 
+// O Kotlin tem um funcao na nativa para filtrar elementos nulos de uma lista. Ex: lista.filterNotNull()
+
