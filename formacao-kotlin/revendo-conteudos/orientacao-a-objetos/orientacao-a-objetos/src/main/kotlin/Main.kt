@@ -43,6 +43,26 @@ fun main(args: Array<String>) {
     contaFran.saca(500.0)
     println(contaFran.saldo)
 
+    println("Fran transfere para conta do Renato")
+    if (contaFran.transfere(100.0, contaRenato)) {
+        println("Transferencia sucedida")
+    } else {
+        println("Falha na transferencia")
+    }
+
+    println(contaRenato.saldo)
+    println(contaFran.saldo)
+
+    println("Fran transfere para conta do Renato")
+    if (contaFran.transfere(500.0, contaRenato)) {
+        println("Transferencia sucedida")
+    } else {
+        println("Falha na transferencia")
+    }
+
+    println(contaRenato.saldo)
+    println(contaFran.saldo)
+
 }
 
 private fun testaCopiaEReferencia() {
@@ -86,6 +106,16 @@ class Conta {
         if (saldo >= valor) {
             this.saldo-= valor
         }
+    }
+
+    fun transfere(valor: Double, destino: Conta): Boolean {
+        if (saldo >= valor) {
+            this.saldo -= valor
+            destino.saldo += valor
+            return true
+        }
+
+        return false
     }
 
 }
