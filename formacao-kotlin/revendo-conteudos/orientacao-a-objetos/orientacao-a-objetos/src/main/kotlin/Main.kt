@@ -1,10 +1,11 @@
 fun main(args: Array<String>) {
     println("Hello Byte Bank!")
 
-    val contaRenato = Conta("Renato", 1000)
+    // os labels permitem que o construtor recebe os parametros em qualquer ordem
+    val contaRenato = Conta(titular = "Renato", numero = 1000)
     contaRenato.deposita(200.0)
 
-    val contaFran = Conta("Fran", 1001)
+    val contaFran = Conta(titular = "Fran", numero = 1001)
     contaFran.deposita(300.0)
 
     println(contaRenato.titular)
@@ -101,7 +102,7 @@ private fun testaCopiaEReferencia() {
 
 class Conta(
     var titular: String,
-    var numero: Int
+    val numero: Int = 0 //atribui o valor 0 como padrao caso nao seja enviado no construtor
 ) {
     var saldo = 0.0
         private set
