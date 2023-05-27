@@ -4,64 +4,64 @@ fun main(args: Array<String>) {
     val contaRenato = Conta()
     contaRenato.titular = "Renato"
     contaRenato.numero = 1000
-    contaRenato.setSaldo(200.0)
+    contaRenato.deposita(200.0)
 
     val contaFran = Conta()
     contaFran.titular = "Fran"
     contaFran.numero = 1001
-    contaFran.setSaldo(300.0)
+    contaFran.deposita(300.0)
 
     println(contaRenato.titular)
     println(contaRenato.numero)
-    println(contaRenato.getSaldo())
+    println(contaRenato.saldo)
 
     println(contaFran.titular)
     println(contaFran.numero)
-    println(contaFran.getSaldo())
+    println(contaFran.saldo)
 
-//    println("Depositando na conta do Renato")
-//    contaRenato.deposita(50.0)
-//    println(contaRenato.saldo)
-//
-//    println("Depositando na conta da Fran")
-//    contaFran.deposita(70.0)
-//    println(contaFran.saldo)
-//
-//    println("Sacando na conta do Renato")
-//    contaRenato.saca(250.0)
-//    println(contaRenato.saldo)
-//
-//    println("Sacando na conta da Fran")
-//    contaFran.saca(100.0)
-//    println(contaFran.saldo)
-//
-//    println("Saque em excesso na conta do Renato")
-//    contaRenato.saca(100.0)
-//    println(contaRenato.saldo)
-//
-//    println("Saque em excesso na conta da Fran")
-//    contaFran.saca(500.0)
-//    println(contaFran.saldo)
-//
-//    println("Fran transfere para conta do Renato")
-//    if (contaFran.transfere(100.0, contaRenato)) {
-//        println("Transferencia sucedida")
-//    } else {
-//        println("Falha na transferencia")
-//    }
-//
-//    println(contaRenato.saldo)
-//    println(contaFran.saldo)
-//
-//    println("Fran transfere para conta do Renato")
-//    if (contaFran.transfere(500.0, contaRenato)) {
-//        println("Transferencia sucedida")
-//    } else {
-//        println("Falha na transferencia")
-//    }
-//
-//    println(contaRenato.saldo)
-//    println(contaFran.saldo)
+    println("Depositando na conta do Renato")
+    contaRenato.deposita(50.0)
+    println(contaRenato.saldo)
+
+    println("Depositando na conta da Fran")
+    contaFran.deposita(70.0)
+    println(contaFran.saldo)
+
+    println("Sacando na conta do Renato")
+    contaRenato.saca(250.0)
+    println(contaRenato.saldo)
+
+    println("Sacando na conta da Fran")
+    contaFran.saca(100.0)
+    println(contaFran.saldo)
+
+    println("Saque em excesso na conta do Renato")
+    contaRenato.saca(100.0)
+    println(contaRenato.saldo)
+
+    println("Saque em excesso na conta da Fran")
+    contaFran.saca(500.0)
+    println(contaFran.saldo)
+
+    println("Fran transfere para conta do Renato")
+    if (contaFran.transfere(100.0, contaRenato)) {
+        println("Transferencia sucedida")
+    } else {
+        println("Falha na transferencia")
+    }
+
+    println(contaRenato.saldo)
+    println(contaFran.saldo)
+
+    println("Fran transfere para conta do Renato")
+    if (contaFran.transfere(500.0, contaRenato)) {
+        println("Transferencia sucedida")
+    } else {
+        println("Falha na transferencia")
+    }
+
+    println(contaRenato.saldo)
+    println(contaFran.saldo)
 
 }
 
@@ -93,13 +93,28 @@ private fun testaCopiaEReferencia() {
      */
 }
 
+/**
+ *
+ * A forma ideomatica do Kotlin trabalhar com atributos de classe
+ * é através de properties. Cada atributo que criamos numa classe
+ * contém implicitamente um get e um set. Ex:
+ *
+ *     var saldo = 0.0
+ *         set
+ *         get
+ *
+ */
+
 class Conta {
     var titular = ""
     var numero = 0
-    private var saldo = 0.0
+    var saldo = 0.0
+        private set
 
     fun deposita(valor: Double) {
-        this.saldo += valor
+        if (valor > 0) {
+            this.saldo += valor
+        }
     }
 
     fun saca(valor: Double) {
@@ -118,6 +133,9 @@ class Conta {
         return false
     }
 
+/*
+    Codigo comum para linguagens que trabalham com orientação a objetos
+
     fun getSaldo(): Double {
         return saldo
     }
@@ -126,7 +144,7 @@ class Conta {
         if (valor > 0.0) {
             this.saldo += valor
         }
-    }
+    }*/
 
 }
 
