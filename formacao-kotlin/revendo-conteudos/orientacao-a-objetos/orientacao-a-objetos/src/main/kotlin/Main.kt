@@ -1,14 +1,10 @@
 fun main(args: Array<String>) {
-    println("Hello World!")
+    println("Hello Byte Bank!")
 
-    val contaRenato = Conta()
-    contaRenato.titular = "Renato"
-    contaRenato.numero = 1000
+    val contaRenato = Conta("Renato", 1000)
     contaRenato.deposita(200.0)
 
-    val contaFran = Conta()
-    contaFran.titular = "Fran"
-    contaFran.numero = 1001
+    val contaFran = Conta("Fran", 1001)
     contaFran.deposita(300.0)
 
     println(contaRenato.titular)
@@ -73,10 +69,8 @@ private fun testaCopiaEReferencia() {
     println("numeroX $numeroX")
     println("numeroY $numeroY")
 
-    val contaJoao = Conta()
-    contaJoao.titular = "João"
-    var contaMaria = contaJoao
-    contaMaria.titular = "Maria"
+    val contaJoao = Conta("João", 1002)
+    var contaMaria = Conta("Maria", 1003)
 
     println("titular conta joao: ${contaJoao.titular}")
     println("titular conta maria: ${contaMaria.titular}")
@@ -105,11 +99,18 @@ private fun testaCopiaEReferencia() {
  *
  */
 
-class Conta {
-    var titular = ""
-    var numero = 0
+class Conta(
+    var titular: String,
+    var numero: Int
+) {
     var saldo = 0.0
         private set
+
+    //construtor secundario
+//    constructor(titular: String, numero: Int) {
+//        this.titular = titular
+//        this.numero = numero
+//    }
 
     fun deposita(valor: Double) {
         if (valor > 0) {
