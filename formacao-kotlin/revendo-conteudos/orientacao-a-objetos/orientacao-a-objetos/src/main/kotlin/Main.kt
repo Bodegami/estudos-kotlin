@@ -11,15 +11,27 @@ fun main(args: Array<String>) {
     contaFran.numero = 1001
     contaFran.saldo = 300.0
 
-//    println(contaRenato.titular)
-//    println(contaRenato.numero)
-//    println(contaRenato.saldo)
-//
-//    println(contaFran.titular)
-//    println(contaFran.numero)
-//    println(contaFran.saldo)
+    println(contaRenato.titular)
+    println(contaRenato.numero)
+    println(contaRenato.saldo)
+
+    println(contaFran.titular)
+    println(contaFran.numero)
+    println(contaFran.saldo)
+
+    println("Depositando na conta do Renato")
+    deposita(contaRenato, 50.0)
+    println(contaRenato.saldo)
+
+    println("Depositando na conta da Fran")
+    deposita(contaFran, 70.0)
+    println(contaFran.saldo)
 
 
+
+}
+
+private fun testaCopiaEReferencia() {
     val numeroX = 10
     var numeroY = numeroX
     numeroY++
@@ -51,4 +63,8 @@ class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
+}
+
+fun deposita(conta: Conta, valor: Double) {
+    conta.saldo += valor
 }
