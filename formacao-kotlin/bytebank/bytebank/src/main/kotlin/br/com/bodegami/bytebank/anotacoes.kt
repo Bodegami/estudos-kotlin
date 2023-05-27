@@ -231,6 +231,12 @@ package br.com.bodegami.bytebank
 // A interface list possui uma funcao 'groupBy' que recebe um parametro como argumento. Essa funcao
 // retorna um 'Map' onde a chave é o parametro informado. Ex: listaLivros.groupBy { it.autor }
 
-// Cuidado ao usar listas mutaveis pois mesmo criando uma nova variavel apontando para o mesmo objeto que outra
+// Cuidado ao usar listas mutaveis 'MutableList' pois mesmo criando uma nova variavel apontando para o mesmo objeto que outra
 // variavel, qualquer manipulação ira afetar as duas variaveis
+
+// A interface List é imutavel, por isso ela não reproduz o problema citado acima.
+
+// A funcao 'sortBy { it.xpto}' altera a ordenacao da propria lista (this) e só disponivel para 'MutableList'
+// A funcao 'sortedBy '{ it.xpto }' retorna uma nova lista com ordenacao atribuida e está disponivel para qualquer
+// filha de 'List'
 
