@@ -240,3 +240,11 @@ package br.com.bodegami.bytebank
 // A funcao 'sortedBy '{ it.xpto }' retorna uma nova lista com ordenacao atribuida e está disponivel para qualquer
 // filha de 'List'
 
+
+// ----------------------------------------------MODULO 6-------------------------------------------------->
+
+// Ao criar a classe BancoDeNomes, declaramos uma variavel do tipo MutableList que é devolvida para o usuario 
+// ao acessar o comando BancoDeNomes().nomes, porém percebemos que sempre que uma nova instância é criada dessa
+// classe, a lista é zerada novamente. Podemos corrigir esse comportamento transformando a variavel nomes em 
+// um companion object. Dessa forma, toda fez a que uma nova instância de BancoDeNomes for criada, ele vai manter
+// a lista no mesmo estado.
