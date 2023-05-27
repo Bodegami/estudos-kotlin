@@ -20,14 +20,28 @@ fun main(args: Array<String>) {
     println(contaFran.saldo)
 
     println("Depositando na conta do Renato")
-    deposita(contaRenato, 50.0)
+    contaRenato.deposita(50.0)
     println(contaRenato.saldo)
 
     println("Depositando na conta da Fran")
-    deposita(contaFran, 70.0)
+    contaFran.deposita(70.0)
     println(contaFran.saldo)
 
+    println("Sacando na conta do Renato")
+    contaRenato.saca(250.0)
+    println(contaRenato.saldo)
 
+    println("Sacando na conta da Fran")
+    contaFran.saca(100.0)
+    println(contaFran.saldo)
+
+    println("Saque em excesso na conta do Renato")
+    contaRenato.saca(100.0)
+    println(contaRenato.saldo)
+
+    println("Saque em excesso na conta da Fran")
+    contaFran.saca(500.0)
+    println(contaFran.saldo)
 
 }
 
@@ -63,8 +77,16 @@ class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
+
+    fun deposita(valor: Double) {
+        this.saldo += valor
+    }
+
+    fun saca(valor: Double) {
+        if (saldo >= valor) {
+            this.saldo-= valor
+        }
+    }
+
 }
 
-fun deposita(conta: Conta, valor: Double) {
-    conta.saldo += valor
-}
