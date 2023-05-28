@@ -10,7 +10,7 @@
  *
  */
 
-class Conta(
+open class Conta(
     var titular: String,
     val numero: Int = 0 //atribui o valor 0 como padrao caso nao seja enviado no construtor
 ) {
@@ -29,7 +29,7 @@ class Conta(
         }
     }
 
-    fun saca(valor: Double) {
+    open fun saca(valor: Double) {
         if (saldo >= valor) {
             this.saldo-= valor
         }
