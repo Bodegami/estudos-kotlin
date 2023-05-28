@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
     println("nome $${renato.nome}")
     println("cpf $${renato.cpf}")
     println("salario $${renato.salario}")
-    println("bonificacao ${renato.getBonificacao()}")
+    println("bonificacao ${renato.bonificacao()}")
 
     val fran = Gerente(
         nome = "Fran",
@@ -23,7 +23,7 @@ fun main(args: Array<String>) {
     println("nome $${fran.nome}")
     println("cpf $${fran.cpf}")
     println("salario $${fran.salario}")
-    println("bonificacao ${fran.getBonificacao()}")
+    println("bonificacao ${fran.bonificacao()}")
 
     if (fran.autentica(4000)) {
         println("autenticou com sucesso!")
@@ -34,7 +34,7 @@ fun main(args: Array<String>) {
     val gui = Diretor(
         nome = "Gui",
         cpf = "66655544401",
-        salario = 3000.0,
+        salario = 4000.0,
         senha = 4000,
         plr = 200.0
     )
@@ -42,7 +42,7 @@ fun main(args: Array<String>) {
     println("nome $${gui.nome}")
     println("cpf $${gui.cpf}")
     println("salario $${gui.salario}")
-    println("bonificacao ${gui.getBonificacao()}")
+    println("bonificacao ${gui.bonificacao()}")
     println("plr ${gui.plr}")
 
 }
