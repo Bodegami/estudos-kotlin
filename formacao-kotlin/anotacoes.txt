@@ -248,3 +248,14 @@ package br.com.bodegami.bytebank
 // classe, a lista é zerada novamente. Podemos corrigir esse comportamento transformando a variavel nomes em 
 // um companion object. Dessa forma, toda fez a que uma nova instância de BancoDeNomes for criada, ele vai manter
 // a lista no mesmo estado.
+
+// Mesmo aplicando a boa pratica citada acima, ainda é possível criar uma variavel apontando para mesma referencia
+// de objeto e apartir dessa variavel manipular a lista internamente atraves de um comando 'nomes.add("Nome")'.
+// Nao so, mas ao fazer isso, a referencia altera o mesmo objeto que que outras variaveis podem estar apontando.
+// Para evitar esse comportamento, temos que alterar a forma como devolvemos o atributo que representa a nossa lista
+// na classe Banco de dados, fazendo ele retornar uma nova lista com o metodo 'toList'. Dessa forma, ao criar uma variavel
+// apontando para o atributo nomes da instancia de BancoDeNomes, a varivel vai receber uma copia da lista original sem
+// afetar o comportamento de outras variaveis que apontam para o mesmo objeto
+
+// Para devolver uma lista de elementos removendo suas copias, podemos usar a funcao 'distinc' que vai retornar apenas 
+// um elemento de cada. Ex: val lista = listOf<String>("Ana", "Carlos", "Ana") .. lista.distinct() .. resultado = [Ana, Carlos]
