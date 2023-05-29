@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
 
     val sistemaInterno = SistemaInterno()
     sistemaInterno.entra(gerente, 1234)
-    sistemaInterno.entra(diretora, 4321)
+    sistemaInterno.entra(diretora, 2000)
 
 }
 
