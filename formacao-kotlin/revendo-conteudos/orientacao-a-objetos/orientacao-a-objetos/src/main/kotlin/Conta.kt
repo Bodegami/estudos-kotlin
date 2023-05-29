@@ -10,12 +10,12 @@
  *
  */
 
-open class Conta(
+abstract class Conta(
     var titular: String,
     val numero: Int = 0 //atribui o valor 0 como padrao caso nao seja enviado no construtor
 ) {
     var saldo = 0.0
-        private set
+        protected set
 
     //construtor secundario
 //    constructor(titular: String, numero: Int) {
@@ -29,11 +29,7 @@ open class Conta(
         }
     }
 
-    open fun saca(valor: Double) {
-        if (saldo >= valor) {
-            this.saldo-= valor
-        }
-    }
+    abstract fun saca(valor: Double)
 
     fun transfere(valor: Double, destino: Conta): Boolean {
         if (saldo >= valor) {

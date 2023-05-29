@@ -1,9 +1,9 @@
 fun testaComportamentosConta() {
     // os labels permitem que o construtor recebe os parametros em qualquer ordem
-    val contaRenato = Conta(titular = "Renato", numero = 1000)
+    val contaRenato = ContaCorrente(titular = "Renato", numero = 1000)
     contaRenato.deposita(200.0)
 
-    val contaFran = Conta(titular = "Fran", numero = 1001)
+    val contaFran = ContaPoupanca(titular = "Fran", numero = 1001)
     contaFran.deposita(300.0)
 
     println(contaRenato.titular)
