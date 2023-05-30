@@ -1,5 +1,5 @@
 fun testaAutenticacao() {
-    
+
     val gerente = Gerente(
         nome = "Renato",
         cpf = "33322266601",
@@ -23,6 +23,6 @@ fun testaAutenticacao() {
 
     val sistemaInterno = SistemaInterno()
     sistemaInterno.entra(gerente, 1234)
-    sistemaInterno.entra(diretora, 2000)
+    sistemaInterno.entra(diretora, 4321)
     sistemaInterno.entra(cliente, 1515)
 }
