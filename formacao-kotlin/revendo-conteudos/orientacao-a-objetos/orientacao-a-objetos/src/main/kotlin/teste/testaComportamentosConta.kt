@@ -1,7 +1,6 @@
 package teste
 
-import modelo.ContaCorrente
-import modelo.ContaPoupanca
+import modelo.*
 
 fun testaComportamentosConta() {
     // os labels permitem que o construtor recebe os parametros em qualquer ordem

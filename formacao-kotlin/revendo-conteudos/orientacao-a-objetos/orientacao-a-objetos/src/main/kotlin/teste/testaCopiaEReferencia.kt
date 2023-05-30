@@ -1,7 +1,6 @@
 package teste
 
-import modelo.ContaCorrente
-import modelo.ContaPoupanca
+import modelo.*
 
 fun testaCopiaEReferencia() {
     val numeroX = 10
