@@ -1,3 +1,8 @@
+package teste
+
+import modelo.ContaCorrente
+import modelo.ContaPoupanca
+
 fun testaCopiaEReferencia() {
     val numeroX = 10
     var numeroY = numeroX
@@ -19,7 +24,7 @@ fun testaCopiaEReferencia() {
      *
      * Ao finalizar o teste, o comportamento de cópia para variáveis
      * do tipo primitivo deve ser mantido, e para variáveis do tipo
-     * Conta deve apresentar o comportamento de referência.
+     * modelo.Conta deve apresentar o comportamento de referência.
      *
      */
 }

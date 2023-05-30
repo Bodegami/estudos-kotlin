@@ -1,4 +1,8 @@
-class Analista(
+package modelo
+
+import modelo.Funcionario
+
+class Auxiliar(
     nome: String,
     cpf: String,
     salario: Double
@@ -9,7 +13,7 @@ class Analista(
 ) {
 
     override fun bonificacao(): Double {
-        return salario * 0.1
+        return salario * 0.05
     }
 
 }

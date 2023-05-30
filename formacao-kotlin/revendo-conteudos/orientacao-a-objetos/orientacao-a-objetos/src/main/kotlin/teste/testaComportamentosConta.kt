@@ -1,3 +1,8 @@
+package teste
+
+import modelo.ContaCorrente
+import modelo.ContaPoupanca
+
 fun testaComportamentosConta() {
     // os labels permitem que o construtor recebe os parametros em qualquer ordem
     val contaRenato = ContaCorrente(titular = "Renato", numero = 1000)
