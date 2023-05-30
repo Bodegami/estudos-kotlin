@@ -1,8 +1,6 @@
-package modelo
+package br.com.alura.bytebank.modelo
 
-import modelo.Funcionario
-
-class Auxiliar(
+class Analista(
     nome: String,
     cpf: String,
     salario: Double
@@ -13,7 +11,7 @@ class Auxiliar(
 ) {
 
     override fun bonificacao(): Double {
-        return salario * 0.05
+        return salario * 0.1
     }
 
 }

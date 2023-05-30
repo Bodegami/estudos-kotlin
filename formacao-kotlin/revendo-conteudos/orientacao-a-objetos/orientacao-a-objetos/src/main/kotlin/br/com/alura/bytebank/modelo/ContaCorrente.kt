@@ -1,6 +1,6 @@
-package modelo
+package br.com.alura.bytebank.modelo
 
-import modelo.Conta
+import br.com.alura.bytebank.modelo.Conta
 
 class ContaCorrente(
     titular: String,
