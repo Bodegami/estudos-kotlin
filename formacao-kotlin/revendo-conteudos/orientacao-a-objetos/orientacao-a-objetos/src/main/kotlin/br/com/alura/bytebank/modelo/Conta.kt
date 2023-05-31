@@ -13,17 +13,11 @@ package br.com.alura.bytebank.modelo
  */
 
 abstract class Conta(
-    var titular: String,
+    var titular: Cliente,
     val numero: Int = 0 //atribui o valor 0 como padrao caso nao seja enviado no construtor
 ) {
     var saldo = 0.0
         protected set
-
-    //construtor secundario
-//    constructor(titular: String, numero: Int) {
-//        this.titular = titular
-//        this.numero = numero
-//    }
 
     fun deposita(valor: Double) {
         if (valor > 0) {
@@ -42,18 +36,5 @@ abstract class Conta(
 
         return false
     }
-
-/*
-    Codigo comum para linguagens que trabalham com orientação a objetos
-
-    fun getSaldo(): Double {
-        return saldo
-    }
-
-    fun setSaldo(valor: Double) {
-        if (valor > 0.0) {
-            this.saldo += valor
-        }
-    }*/
 
 }

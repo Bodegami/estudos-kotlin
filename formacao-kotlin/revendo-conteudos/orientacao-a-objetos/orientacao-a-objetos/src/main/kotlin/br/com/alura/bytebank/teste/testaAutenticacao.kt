@@ -1,10 +1,6 @@
 package br.com.alura.bytebank.teste
 
-import br.com.alura.bytebank.modelo.Cliente
-import br.com.alura.bytebank.modelo.Diretor
-import br.com.alura.bytebank.modelo.Gerente
-import br.com.alura.bytebank.modelo.SistemaInterno
-import modelo.*
+import br.com.alura.bytebank.modelo.*
 
 fun testaAutenticacao() {
 

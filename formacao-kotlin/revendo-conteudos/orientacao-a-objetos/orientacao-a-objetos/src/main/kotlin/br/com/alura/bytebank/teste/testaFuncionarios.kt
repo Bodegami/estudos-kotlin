@@ -1,10 +1,10 @@
 package br.com.alura.bytebank.teste
 
 import br.com.alura.bytebank.modelo.*
-import br.com.alura.modelo.*
-import modelo.*
+
 
 fun testaFuncionarios() {
+
     val renato: Analista = Analista(
         nome = "Renato",
         cpf = "11122233301",

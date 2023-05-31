@@ -1,8 +1,6 @@
 package br.com.alura.bytebank.teste
 
-import br.com.alura.bytebank.modelo.ContaCorrente
-import br.com.alura.bytebank.modelo.ContaPoupanca
-import modelo.*
+import br.com.alura.bytebank.modelo.*
 
 fun testaCopiaEReferencia() {
     val numeroX = 10
@@ -12,11 +10,23 @@ fun testaCopiaEReferencia() {
     println("numeroX $numeroX")
     println("numeroY $numeroY")
 
-    val contaJoao = ContaCorrente("João", 1002)
-    var contaMaria = ContaPoupanca("Maria", 1003)
+    val joao = Cliente(
+        nome = "João",
+        cpf = "77744422201",
+        senha = 1234
+    )
 
-    println("titular conta joao: ${contaJoao.titular}")
-    println("titular conta maria: ${contaMaria.titular}")
+    val maria = Cliente(
+        nome = "Maria",
+        cpf = "99966633301",
+        senha = 4321
+    )
+
+    val contaJoao = ContaCorrente(joao, 1002)
+    var contaMaria = ContaPoupanca(maria, 1003)
+
+    println("titular conta joao: ${contaJoao.titular.nome}")
+    println("titular conta maria: ${contaMaria.titular.nome}")
 
     println(contaJoao)
     println(contaMaria)

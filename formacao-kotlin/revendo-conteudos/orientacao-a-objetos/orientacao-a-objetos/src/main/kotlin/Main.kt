@@ -1,10 +1,11 @@
-import br.com.alura.bytebank.teste.testaImportsEApelidos
+import br.com.alura.bytebank.teste.testaContasDiferentes
 
 fun main(args: Array<String>) {
 
-    testaImportsEApelidos()
+    testaContasDiferentes()
 
 }
+
 
 
 

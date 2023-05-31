@@ -1,15 +1,25 @@
 package br.com.alura.bytebank.teste
 
-import br.com.alura.bytebank.modelo.ContaCorrente
-import br.com.alura.bytebank.modelo.ContaPoupanca
-import modelo.*
+import br.com.alura.bytebank.modelo.*
 
 fun testaComportamentosConta() {
-    // os labels permitem que o construtor recebe os parametros em qualquer ordem
-    val contaRenato = ContaCorrente(titular = "Renato", numero = 1000)
+
+    val renato = Cliente(
+        nome = "Renato",
+        cpf = "77744422201",
+        senha = 1234
+    )
+
+    val fran = Cliente(
+        nome = "Fran",
+        cpf = "99966633301",
+        senha = 4321
+    )
+
+    val contaRenato = ContaCorrente(titular = renato, numero = 1000)
     contaRenato.deposita(200.0)
 
-    val contaFran = ContaPoupanca(titular = "Fran", numero = 1001)
+    val contaFran = ContaPoupanca(titular = fran, numero = 1001)
     contaFran.deposita(300.0)
 
     println(contaRenato.titular)
