@@ -1,5 +1,8 @@
 package br.com.alura.bytebank.modelo
 
+var totalContas = 0
+    private set
+
 /**
  *
  * A forma ideomatica do Kotlin trabalhar com atributos de classe
@@ -18,6 +21,12 @@ abstract class Conta(
 ) {
     var saldo = 0.0
         protected set
+
+    var total = 0
+    init {
+        println("Criando conta")
+        totalContas++
+    }
 
     fun deposita(valor: Double) {
         if (valor > 0) {
