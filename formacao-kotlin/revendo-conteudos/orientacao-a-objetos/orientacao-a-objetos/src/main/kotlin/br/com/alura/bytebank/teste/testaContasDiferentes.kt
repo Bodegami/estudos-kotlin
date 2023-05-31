@@ -7,7 +7,10 @@ fun testaContasDiferentes() {
     val alex = Cliente(
         nome = "Alex",
         cpf = "77744422201",
-        senha = 1234
+        senha = 1234,
+        endereco = Endereco(
+            logradouro = "Rua Vergueiro"
+        )
     )
 
     val fran = Cliente(
@@ -51,10 +54,12 @@ fun testaContasDiferentes() {
     println("titular")
     println("nome do titular ${contaCorrente.titular.nome}")
     println("cpf do titular ${contaCorrente.titular.cpf}")
+    println("endereco titular ${contaCorrente.titular.endereco.logradouro}")
 
     println("titular")
     println("nome do titular ${contaPoupanca.titular.nome}")
     println("cpf do titular ${contaPoupanca.titular.cpf}")
+    println("endereco titular ${contaPoupanca.titular.endereco.logradouro}")
 
 
 }
