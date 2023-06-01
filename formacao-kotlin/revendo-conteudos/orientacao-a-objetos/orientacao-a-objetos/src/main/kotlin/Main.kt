@@ -2,14 +2,24 @@ import br.com.alura.bytebank.modelo.Endereco
 
 fun main() {
     println("início main")
-    10/0
+    try {
+        10/0
+    }
+    catch (E: ArithmeticException) {
+        println("ArithmeticException capturada!")
+    }
     funcao1()
     println("fim main")
 }
 
 fun funcao1(){
     println("início funcao1")
-    funcao2()
+    try {
+        funcao2()
+    }
+    catch (e: ClassCastException) {
+        println("ClassCastException capturada!")
+    }
     println("fim funcao1")
 }
 
