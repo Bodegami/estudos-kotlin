@@ -60,6 +60,4 @@ fun testaContasDiferentes() {
     println("nome do titular ${contaPoupanca.titular.nome}")
     println("cpf do titular ${contaPoupanca.titular.cpf}")
     println("endereco titular ${contaPoupanca.titular.endereco.logradouro}")
-
-
 }
