@@ -1,9 +1,9 @@
 import br.com.alura.bytebank.exception.SaldoInsuficienteException
-import br.com.alura.bytebank.modelo.Endereco
+import br.com.alura.bytebank.teste.testaComportamentosConta
 
 fun main() {
     println("início main")
-    funcao1()
+    testaComportamentosConta()
     println("fim main")
 }
 
