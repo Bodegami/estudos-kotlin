@@ -5,7 +5,7 @@ fun main() {
     try {
         10/0
     }
-    catch (E: ArithmeticException) {
+    catch (e: ArithmeticException) {
         println("ArithmeticException capturada!")
     }
     funcao1()
@@ -18,6 +18,7 @@ fun funcao1(){
         funcao2()
     }
     catch (e: ClassCastException) {
+        e.printStackTrace()
         println("ClassCastException capturada!")
     }
     println("fim funcao1")
