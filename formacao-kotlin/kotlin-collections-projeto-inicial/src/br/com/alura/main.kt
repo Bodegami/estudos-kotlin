@@ -2,29 +2,18 @@ package br.com.alura
 
 fun main() {
 
-    val assistiramCursoAndroid: Set<String> = mutableSetOf<String>("Alex", "Fran", "Gui", "Maria")
-    val assistiramCursoKotlin: Set<String> = mutableSetOf<String>("Alex", "Paulo", "Maria")
-    //val assistiramAmbos = assistiramCursoAndroid + assistiramCursoKotlin
-    val assistiramAmbos = mutableSetOf<String>()
-    assistiramAmbos.addAll(assistiramCursoAndroid)
-    assistiramAmbos.addAll(assistiramCursoKotlin)
-    assistiramAmbos.add("Gui") // não vai adicionar, pois já existe o elemento no Set
-    assistiramAmbos.add("Ana")
-    println(assistiramAmbos)
+    // o Infix "to" facilita a leitura, mas para estruturas muitos grandes ele apresenta um perca de performance
+    val pedidos = mapOf<Int, Double>(Pair(1, 20.0), Pair(2, 23.0), 2 to 50.0, 3 to 50.0)
+    println(pedidos)
 
-    println( assistiramCursoAndroid + assistiramCursoKotlin )
-    println( assistiramCursoAndroid union assistiramCursoKotlin )
+    val pedido = pedidos[1]
+    pedido?.let {
+        println("pedido: $it")
+    }
 
-    println( assistiramCursoAndroid - assistiramCursoKotlin )
-    println( assistiramCursoAndroid subtract assistiramCursoKotlin )
-
-    println(assistiramCursoKotlin intersect assistiramCursoAndroid)
-
-    val assistiramList = assistiramAmbos.toMutableList()
-    assistiramList.add("Alex")
-    println(assistiramList)
-    println(assistiramList.toSet())
-
+    for (pedido: Map.Entry<Int, Double> in pedidos) {
+        println("número do pedido: ${pedido.key}")
+        println("valor do pedido: ${pedido.value}")
+    }
 
 }
-
