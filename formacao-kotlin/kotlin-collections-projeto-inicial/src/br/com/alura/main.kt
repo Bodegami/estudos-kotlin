@@ -12,7 +12,18 @@ fun main() {
     assistiramAmbos.add("Ana")
     println(assistiramAmbos)
 
+    println( assistiramCursoAndroid + assistiramCursoKotlin )
+    println( assistiramCursoAndroid union assistiramCursoKotlin )
 
+    println( assistiramCursoAndroid - assistiramCursoKotlin )
+    println( assistiramCursoAndroid subtract assistiramCursoKotlin )
+
+    println(assistiramCursoKotlin intersect assistiramCursoAndroid)
+
+    val assistiramList = assistiramAmbos.toMutableList()
+    assistiramList.add("Alex")
+    println(assistiramList)
+    println(assistiramList.toSet())
 
 
 }
