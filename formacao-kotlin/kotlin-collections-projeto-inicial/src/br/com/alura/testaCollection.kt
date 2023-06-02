@@ -1,6 +1,6 @@
 package br.com.alura
 
-public fun testaCopia() {
+fun testaCopia() {
     val banco = BancoDeNomes()
     val nomesSalvos: Collection<String> = banco.nomes
     banco.salva("Alex")
@@ -25,7 +25,7 @@ class BancoDeNomes {
 }
 
 
-public fun testaColecao() {
+fun testaColecao() {
     val nomes: Collection<String> = setOf("Alex", "Fran", "Gui", "Maria", "Ana")
     println(nomes)
 
