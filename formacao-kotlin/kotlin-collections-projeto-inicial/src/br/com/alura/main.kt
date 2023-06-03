@@ -15,6 +15,10 @@ fun main() {
     )
     println(pedidos)
 
+    /**
+     * MAP - Comportamentos de Leitura e filtros
+     */
+
     //Retorna nulo caso não encontre a chave no mapa
     var valorPedido: Double? = pedidos[0]
     println(valorPedido)
@@ -60,6 +64,40 @@ fun main() {
 
     val mapaFiltrado: MutableMap<Int, Double> = mutableMapOf<Int, Double>()
     pedidos.filterTo(mapaFiltrado) { it.key % 2 == 0 && it.value > 70.0 }.run { println("Mapa Filtrado: $this") }
+
+    //imprime um mapa com um novo pedido, mas não altera o objeto pedidos
+    println(pedidos + Pair(7, 90.0))
+    println(pedidos + mapOf(7 to 50.0, 8 to 20.0))
+    println(pedidos)
+
+    //imprime pedidos sem o elemento da chave informada, mas não alter o objeto pedidos
+    println(pedidos - 6)
+    println(pedidos - listOf(5, 2, 1))
+    println(pedidos)
+
+    /**
+     * Map - Comportamentos de escrita
+     */
+
+    //Adiciona novos elementos no objeto pedidos através de um Set<Pair, Double>>
+    pedidos.putAll(setOf<Pair<Int, Double>>(7 to 50.0, 8 to 20.0))
+    println(pedidos)
+
+    //Adiciona novos elementos no objeto pedidos através de um List<Pair, Double>>
+    pedidos += listOf<Pair<Int, Double>>(7 to 50.0, 8 to 30.0)
+    println(pedidos)
+
+    //Remove elementos do objeto pedidos pela chave
+    pedidos.keys.remove(1)
+    println(pedidos)
+
+    //Remove o elemento pela chave usando o operator minus assign
+    pedidos -= 2
+    println(pedidos)
+
+    //Remove o primeiro elemento que encontrar pelo valor
+    pedidos.values.remove(50.0)
+    println(pedidos)
 
 
 }
