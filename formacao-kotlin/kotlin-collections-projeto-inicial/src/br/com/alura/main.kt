@@ -45,6 +45,40 @@ fun main() {
     val mapLiteral: Map<String, Int> = listaLiteral.associateWith { it.length }
     println(mapLiteral)
 
+    //cria um mapa, associando o resultado do bloco como chave e o Pedido como valor
+    //aqui gera um problema, porque cada chave tem que ser unica, logo so podemos ter uma chave true e outra false
+    val mapa: Map<Boolean, Pedido> = pedidos.associateBy { pedido -> pedido.valor > 50.0 }
+    println(mapa)
+
+    //atraves de uma lista, transforma num mapa a agrupando pelo primeiro caractere do valor
+    //alem disso, atraves do valueTransform podemos alterar cada elemento
+    val numeros = listOf<String>("one", "two", "three", "four", "five", "six", "seven", "eight", "nive", "ten")
+    //val mapaAgrupadoPelaPrimeiraLetra = numeros.groupBy { it.first().toUpperCase() }
+    val mapaAgrupadoPelaPrimeiraLetra = numeros.groupBy(keySelector = { it.first().toUpperCase() },
+        valueTransform = { it.toUpperCase() })
+    println(mapaAgrupadoPelaPrimeiraLetra)
+
+    //cria um mapa atraves do groupBy, onde a chave é o resultado booleano do bloco e o valor é uma lista de pedidos
+    val pedidosFreteGratisAgrupados: Map<Boolean, List<Pedido>> = pedidos.groupBy { pedido: Pedido -> pedido.valor > 50.0 }
+    println(pedidosFreteGratisAgrupados)
+
+    //imprime o valor do mapa através da chave
+    println(pedidosFreteGratisAgrupados[true])
+
+    val nomes = listOf("Alex", "Fran", "Rafaela", "Gui", "Ana", "Maria", "Paulo", "Gisele", "Renato")
+    val agenda: Map<Char, List<String>> = nomes.groupBy { it.first() }.toSortedMap()
+    println(agenda)
+    println('A')
+
+    //cria o agrupamento atraves da expressão passada no bloco e retorna um objeto do tipo Grouping
+    //Alem disso, o Grouping tem alguns comportamentos especificos
+    val pedidosAgrupados: Grouping<Pedido, Boolean> = pedidos.groupingBy { pedido ->
+        pedido.valor > 50.0
+    }
+
+    //imprime o count de elementos de cada chave
+    println(pedidosAgrupados.eachCount())
+    
 }
 
 data class Pedido(val numero: Int, val valor: Double)
