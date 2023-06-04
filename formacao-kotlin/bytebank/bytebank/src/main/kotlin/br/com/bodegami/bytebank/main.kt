@@ -8,13 +8,34 @@ fun main() {
      * parametros.
      */
 
-    val minhaFuncao = ::teste
+    //inicializacao atraves de uma expressão lambda
+    val minhaFuncaoLambda = {
+        println("Executa como Lambda!")
+    }
+    println(minhaFuncaoLambda())
 
+    //inicializacao atraves de uma funcao anonima
+    val minhaFuncaoAnonima: () -> Unit = fun() {
+        println("Executa como funcao anonima!")
+    }
+    println(minhaFuncaoAnonima())
+
+
+
+}
+
+fun testaTipoFuncaoReferencia() {
+    //inicializacao atraves da referencia de funcao
+
+    val minhaFuncao = ::teste
     println(minhaFuncao())
+}
+
+fun testaTipoFuncaoClasse() {
+    //inicializacao atraves de um objeto de classe com a reimplementacao do invoke
 
     val minhaFuncaoClasses: () -> Unit = Teste()
     println(minhaFuncaoClasses())
-
 }
 
 fun teste() {
