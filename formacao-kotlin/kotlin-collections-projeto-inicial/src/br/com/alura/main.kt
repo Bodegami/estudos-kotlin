@@ -78,7 +78,7 @@ fun main() {
 
     //imprime o count de elementos de cada chave
     println(pedidosAgrupados.eachCount())
-    
+
 }
 
 data class Pedido(val numero: Int, val valor: Double)
