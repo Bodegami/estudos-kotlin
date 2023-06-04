@@ -8,31 +8,32 @@ fun main() {
 //     * parametros.
 //     */
 
-    testaTipoFuncaoReferencia()
-    testaTipoFuncaoClasse()
+//    testaTipoFuncaoReferencia()
+//    testaTipoFuncaoClasse()
 
 
-//    testaFuncaoLambda()
-//
-//    testaTipoFuncaoAnonima()
+    testaFuncaoLambda()
+    testaTipoFuncaoAnonima()
 
 
 }
 
 fun testaFuncaoLambda() {
     //inicializacao atraves de uma expressão lambda
-    val minhaFuncaoLambda = {
+    val minhaFuncaoLambda = { a: Int, b: Int ->
         println("Executa como Lambda!")
+        a + b
     }
-    println(minhaFuncaoLambda())
+    println(minhaFuncaoLambda(15, 10))
 }
 
 fun testaTipoFuncaoAnonima() {
     //inicializacao atraves de uma funcao anonima
-    val minhaFuncaoAnonima: () -> Unit = fun() {
+    val minhaFuncaoAnonima = fun(a: Int, b: Int): Int {
         println("Executa como funcao anonima!")
+        return a + b
     }
-    println(minhaFuncaoAnonima())
+    println(minhaFuncaoAnonima(15, 15))
 }
 
 fun testaTipoFuncaoReferencia() {
@@ -44,7 +45,7 @@ fun testaTipoFuncaoReferencia() {
 
 fun testaTipoFuncaoClasse() {
     //inicializacao atraves de um objeto de classe com a reimplementacao do invoke
-
+    //a funcao anonima de certa forma é mais declarativa e legivel
     val minhaFuncaoClasses: (Int, Int) -> Int = Soma()
     println(minhaFuncaoClasses(10, 10))
 }
@@ -52,6 +53,6 @@ fun testaTipoFuncaoClasse() {
 fun soma(a: Int, b: Int) : Int = a + b
 
 class Soma: (Int, Int) -> Int {
-    override fun invoke(p1: Int, p2: Int): Int = p1 + p2
+    override fun invoke(a: Int, b: Int): Int = a + b
 
 }
