@@ -4,31 +4,23 @@ import br.com.bodegami.bytebank.modelo.Endereco
 
 fun main() {
 
-    val testeFuncao: () -> Unit
+//    val endereco = Endereco(logradouro = "rua vergueiro", numero = 3185)
+//    val enderecoEmMaisculo = "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
+//    println(enderecoEmMaisculo)
 
-    Endereco().let {
-        it
-    }
+    Endereco(logradouro = "rua vergueiro", numero = 3185)
+        .let { endereco ->
+            "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
+        }.let (::println)
 
-
-    "".let(::testeRecebeString)
-
-    1.let {
-        it
-    }
-
-    teste (1, {})
-
-
-
-}
-
-fun testeRecebeString(teste: String) {
-
-}
-
-//High Order Function
-//É quando temos uma função recebe ou devolve outra função
-fun teste(teste: Int, bloco: () -> Unit) {
+    listOf(
+        Endereco(complemento = "casa"),
+        Endereco(),
+        Endereco(complemento = "apartamento"))
+        .filter { endereco -> !endereco.complemento.isNullOrEmpty() }
+        .let { enderecosComComplemento ->
+            println(enderecosComComplemento)
+            println(enderecosComComplemento.size)
+        }
 
 }
