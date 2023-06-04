@@ -1,75 +1,34 @@
 package br.com.bodegami.bytebank
 
+import br.com.bodegami.bytebank.modelo.Endereco
+
 fun main() {
 
-//    /**
-//     * Assim como no Python, as funções são Firt-Class, ou seja,
-//     * elas podem ser assinadas como variaveis ou passadas como
-//     * parametros.
-//     */
+    val testeFuncao: () -> Unit
 
-//    testaTipoFuncaoReferencia()
-//    testaTipoFuncaoClasse()
-
-
-//    testaFuncaoLambda()
-//    testaTipoFuncaoAnonima()
-
-    val calculaBonificacao: (salario: Double) -> Double = lambda@{ salario ->
-        if (salario > 1000.0) {
-            return@lambda salario + 50.0
-        }
-        return@lambda salario + 100.0
+    Endereco().let {
+        it
     }
-    println(calculaBonificacao(1100.0))
 
 
-    val calculaBonificacaoAnonima: (salario: Double) -> Double = fun(salario): Double {
-        if (salario > 1000.0) {
-            return salario + 50.0
-        }
-        return salario + 100.0
+    "".let(::testeRecebeString)
+
+    1.let {
+        it
     }
-    println(calculaBonificacaoAnonima(1100.0))
+
+    teste (1, {})
+
 
 
 }
 
-fun testaFuncaoLambda() {
-    //inicializacao atraves de uma expressão lambda
-    val minhaFuncaoLambda = { a: Int, b: Int ->
-        println("Executa como Lambda!")
-        a + b
-    }
-    println(minhaFuncaoLambda(15, 10))
+fun testeRecebeString(teste: String) {
+
 }
 
-fun testaTipoFuncaoAnonima() {
-    //inicializacao atraves de uma funcao anonima
-    val minhaFuncaoAnonima = fun(a: Int, b: Int): Int {
-        println("Executa como funcao anonima!")
-        return a + b
-    }
-    println(minhaFuncaoAnonima(15, 15))
-}
-
-fun testaTipoFuncaoReferencia() {
-    //inicializacao atraves da referencia de funcao
-    //devemos indicar os paramtros de entra e saida. ex: (Int, Int) -> Int
-    val minhaFuncao: (Int, Int) -> Int = ::soma
-    println(minhaFuncao(5, 10))
-}
-
-fun testaTipoFuncaoClasse() {
-    //inicializacao atraves de um objeto de classe com a reimplementacao do invoke
-    //a funcao anonima de certa forma é mais declarativa e legivel
-    val minhaFuncaoClasses: (Int, Int) -> Int = Soma()
-    println(minhaFuncaoClasses(10, 10))
-}
-
-fun soma(a: Int, b: Int) : Int = a + b
-
-class Soma: (Int, Int) -> Int {
-    override fun invoke(a: Int, b: Int): Int = a + b
+//High Order Function
+//É quando temos uma função recebe ou devolve outra função
+fun teste(teste: Int, bloco: () -> Unit) {
 
 }
