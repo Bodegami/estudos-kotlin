@@ -10,8 +10,10 @@ fun main() {
 //    val enderecoEmMaisculo = "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
 //    println(enderecoEmMaisculo)
 
+    //O apply e o also retornam o objeto de contexto
+    //já o run devolve o resultado da ultima expressão no bloco, assim como no lambda
     Endereco(logradouro = "rua vergueiro", numero = 3185)
-        .apply {
+        .run {
             "$logradouro, $numero".toUpperCase()
         }.let (::println)
 
