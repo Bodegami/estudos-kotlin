@@ -6,6 +6,17 @@ import br.com.bodegami.bytebank.modelo.SistemaInterno
 
 fun main() {
 
+    /**
+     * run() sem extensão para executar qualquer instrução retornando ou não uma computação.
+     *
+     * also() para imprimir o que está acontecendo no código e devolver o objeto de contexto.
+     *
+     * apply() para inicializar o objeto de contexto e devolvê-lo.
+     *
+     * with() para computar e devolver algo utilizando os membros do objeto de contexto.
+     *
+     **/
+
 //    val endereco = Endereco(logradouro = "rua vergueiro", numero = 3185)
 //    val enderecoEmMaisculo = "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
 //    println(enderecoEmMaisculo)
