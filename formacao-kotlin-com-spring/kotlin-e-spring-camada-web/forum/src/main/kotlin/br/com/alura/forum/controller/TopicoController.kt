@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import java.util.*
+import javax.validation.Valid
 
 @RestController
 @RequestMapping("/topicos")
@@ -26,8 +27,8 @@ class TopicoController(private val service: TopicoService) {
     }
 
     @PostMapping
-    fun cadastrar(@RequestBody dto: NovoTopicoForm) {
-        service.cadastrar(dto)
+    fun cadastrar(@RequestBody @Valid form: NovoTopicoForm) {
+        service.cadastrar(form)
     }
 
 }
