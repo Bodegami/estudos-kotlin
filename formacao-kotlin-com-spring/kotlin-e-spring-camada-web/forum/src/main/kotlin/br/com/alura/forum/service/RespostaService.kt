@@ -1,5 +1,7 @@
 package br.com.alura.forum.service
 
+import br.com.alura.forum.dto.NovaRespostaForm
+import br.com.alura.forum.mapper.RespostaFormMapper
 import br.com.alura.forum.model.Curso
 import br.com.alura.forum.model.Resposta
 import br.com.alura.forum.model.Topico
@@ -9,7 +11,11 @@ import java.util.*
 import java.util.stream.Collectors
 
 @Service
-class RespostaService(private var respostas: List<Resposta>) {
+class RespostaService(
+    private var respostas: List<Resposta>,
+    private val topicoService: TopicoService,
+    private val respostaFormMapper: RespostaFormMapper
+) {
 
     init {
         val curso = Curso(
@@ -51,7 +57,14 @@ class RespostaService(private var respostas: List<Resposta>) {
 
     fun listar(idTopico: Long): List<Resposta> {
         return respostas.stream().filter { r ->
-            r.topico.id == idTopico
+            r.topico?.id == idTopico
         }.collect(Collectors.toList())
+    }
+
+    fun cadastrar(form: NovaRespostaForm, idTopico: Long) {
+        val resposta = respostaFormMapper.map(form)
+        resposta.id = respostas.size.toLong() + 1
+        resposta.topico = topicoService.buscarPorIdTopico(idTopico)
+        respostas = respostas.plus(resposta)
     }
 }

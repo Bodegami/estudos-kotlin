@@ -11,13 +11,13 @@ import kotlin.collections.ArrayList
 @Service
 class TopicoService(
     private var topicos: List<Topico> = ArrayList<Topico>(),
-    private val topicoVierMapper: TopicoViewMapper,
+    private val topicoViewMapper: TopicoViewMapper,
     private val topicoFormMapper: TopicoFormMapper
 ) {
 
     fun listar(): List<TopicoView> {
         return topicos.stream().map { topico ->
-            topicoVierMapper.map(topico)
+            topicoViewMapper.map(topico)
         }.toList()
     }
 
@@ -26,7 +26,14 @@ class TopicoService(
             .filter { topico -> topico.id == id }
             .findFirst()
             .get()
-            .let{ topico -> topicoVierMapper.map(topico) }
+            .let{ topico -> topicoViewMapper.map(topico) }
+    }
+
+    fun buscarPorIdTopico(id: Long): Topico {
+        return topicos.stream()
+            .filter { topico -> topico.id == id }
+            .findFirst()
+            .get()
     }
 
     fun cadastrar(form: NovoTopicoForm) {
