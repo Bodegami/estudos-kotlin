@@ -3,6 +3,7 @@ package br.com.alura.forum.service
 import br.com.alura.forum.dto.AtualizacaoTopicoForm
 import br.com.alura.forum.dto.NovoTopicoForm
 import br.com.alura.forum.dto.TopicoView
+import br.com.alura.forum.exception.NotFoundException
 import br.com.alura.forum.mapper.TopicoFormMapper
 import br.com.alura.forum.mapper.TopicoViewMapper
 import br.com.alura.forum.model.Topico
@@ -15,6 +16,8 @@ class TopicoService(
     private val topicoViewMapper: TopicoViewMapper,
     private val topicoFormMapper: TopicoFormMapper
 ) {
+
+    private val notFoundMessage: String = "Topico nao encontrado"
 
     fun listar(): List<TopicoView> {
         return topicos.stream().map { topico ->
@@ -34,7 +37,7 @@ class TopicoService(
         return topicos.stream()
             .filter { topico -> topico.id == id }
             .findFirst()
-            .get()
+            .orElseThrow{ NotFoundException(notFoundMessage) }
     }
 
     fun cadastrar(form: NovoTopicoForm): TopicoView {
@@ -48,7 +51,7 @@ class TopicoService(
         val topico = topicos.stream()
             .filter { topico -> topico.id == form.id }
             .findFirst()
-            .get()
+            .orElseThrow{ NotFoundException(notFoundMessage) }
 
         val topicoAtualizado = Topico(
             id = form.id,
@@ -70,7 +73,7 @@ class TopicoService(
         val topico = topicos.stream()
             .filter { topico -> topico.id == id }
             .findFirst()
-            .get()
+            .orElseThrow{ NotFoundException(notFoundMessage) }
         topicos = topicos.minus(topico)
     }
 }
