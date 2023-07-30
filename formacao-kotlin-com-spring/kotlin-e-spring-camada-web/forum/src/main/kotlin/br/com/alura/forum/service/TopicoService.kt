@@ -60,4 +60,12 @@ class TopicoService(
                 dataCriacao = topico.dataCriacao
             ))
     }
+
+    fun deletar(id: Long) {
+        val topico = topicos.stream()
+            .filter { topico -> topico.id == id }
+            .findFirst()
+            .get()
+        topicos = topicos.minus(topico)
+    }
 }
