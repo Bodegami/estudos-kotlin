@@ -7,9 +7,8 @@ import javax.persistence.Id
 
 @Entity
 data class Usuario(
-
-        @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-        val id: Long? = null,
-        val nome: String,
-        val email: String
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long? = null,
+    val nome: String,
+    val email: String
 )
