@@ -3,12 +3,15 @@ package br.com.alura.forum.service
 import br.com.alura.forum.dto.AtualizacaoRespostaForm
 import br.com.alura.forum.dto.NovaRespostaForm
 import br.com.alura.forum.dto.RespostaView
+import br.com.alura.forum.exception.NotFoundException
 import br.com.alura.forum.mapper.RespostaFormMapper
 import br.com.alura.forum.mapper.RespostaViewMapper
+import br.com.alura.forum.mapper.TopicoViewMapper
 import br.com.alura.forum.model.Curso
 import br.com.alura.forum.model.Resposta
 import br.com.alura.forum.model.Topico
 import br.com.alura.forum.model.Usuario
+import br.com.alura.forum.repository.TopicoRepository
 import org.springframework.stereotype.Service
 import java.util.*
 import java.util.stream.Collectors
@@ -16,9 +19,9 @@ import java.util.stream.Collectors
 @Service
 class RespostaService(
     private var respostas: List<Resposta>,
-    private val topicoService: TopicoService,
     private val respostaFormMapper: RespostaFormMapper,
-    private val respostaViewMapper: RespostaViewMapper
+    private val respostaViewMapper: RespostaViewMapper,
+    private val topicoRepository: TopicoRepository
 ) {
 
     init {
@@ -68,7 +71,7 @@ class RespostaService(
     fun cadastrar(form: NovaRespostaForm, idTopico: Long) {
         val resposta = respostaFormMapper.map(form)
         resposta.id = respostas.size.toLong() + 1
-        resposta.topico = topicoService.buscarPorIdTopico(idTopico)
+        resposta.topico = topicoRepository.findById(idTopico).orElseThrow { NotFoundException("Topico não encontrado") }
         respostas = respostas.plus(resposta)
     }
 
