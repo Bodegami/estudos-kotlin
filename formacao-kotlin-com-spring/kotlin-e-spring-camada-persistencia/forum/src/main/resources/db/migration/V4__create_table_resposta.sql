@@ -1,5 +1,5 @@
 create table resposta(
-    id bigint,
+    id bigint auto_increment,
     mensagem varchar(300) not null,
     data_criacao datetime not null,
     topico_id bigint not null,
