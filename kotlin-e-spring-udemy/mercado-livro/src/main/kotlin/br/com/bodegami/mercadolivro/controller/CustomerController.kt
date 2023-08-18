@@ -4,6 +4,7 @@ import br.com.bodegami.mercadolivro.controller.request.PostCustomerRequest
 import br.com.bodegami.mercadolivro.controller.request.PutCustomerRequest
 import br.com.bodegami.mercadolivro.model.CustomerModel
 import org.springframework.http.HttpStatus
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -41,12 +42,16 @@ class CustomerController {
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun update(@PathVariable id: String, @RequestBody customer: PutCustomerRequest) {
-        custormers.first { it ->
-            it.id == id
-        }.let { it ->
+        custormers.first { it.id == id }.let { it ->
             it.name = customer.name
             it.email = customer.email
         }
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    fun delete(@PathVariable id: String) {
+        custormers.removeIf { it.id == id }
     }
 
 
