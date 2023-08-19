@@ -2,6 +2,7 @@ package br.com.bodegami.mercadolivro.controller
 
 import br.com.bodegami.mercadolivro.controller.request.PostCustomerRequest
 import br.com.bodegami.mercadolivro.controller.request.PutCustomerRequest
+import br.com.bodegami.mercadolivro.extension.toCustomerModel
 import br.com.bodegami.mercadolivro.model.CustomerModel
 import br.com.bodegami.mercadolivro.service.CustomerService
 import org.springframework.http.HttpStatus
@@ -35,13 +36,13 @@ class CustomerController(
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun create(@RequestBody customer: PostCustomerRequest) {
-        customerService.create(customer)
+        customerService.create(customer.toCustomerModel())
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun update(@PathVariable id: String, @RequestBody customer: PutCustomerRequest) {
-        customerService.update(id, customer)
+        customerService.update(customer.toCustomerModel(id))
     }
 
     @DeleteMapping("/{id}")
