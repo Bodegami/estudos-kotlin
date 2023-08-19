@@ -1,44 +1,48 @@
 package br.com.bodegami.mercadolivro.service
 
 import br.com.bodegami.mercadolivro.model.CustomerModel
+import br.com.bodegami.mercadolivro.repository.CustomerRepository
 import org.springframework.stereotype.Service
+import java.lang.Exception
 
 @Service
-class CustomerService {
+class CustomerService(
+    val customerRepository: CustomerRepository
+) {
 
     val custormers = mutableListOf<CustomerModel>()
 
     fun findAll(name: String?): List<CustomerModel> {
         name?.let {
-            return custormers.filter { it.name.contains(name, true) }
+            return customerRepository.findByNameContaining(name)
         }
-        return custormers
+        return customerRepository.findAll().toList()
     }
 
     fun findById(id: Int): CustomerModel {
-        return custormers.first { it.id == id }
+        return customerRepository.findById(id).orElseThrow()
     }
 
     fun create(customer: CustomerModel) {
-        val id = if(custormers.isEmpty()) {
-            1
-        } else {
-            custormers.last().id!!.toInt().plus(1)
-        }
-
-        customer.id = id
-        custormers.add(customer)
+        customerRepository.save(customer)
     }
 
     fun update(customer: CustomerModel) {
-        custormers.first { it.id == customer.id }.let { it ->
-            it.name = customer.name
-            it.email = customer.email
+        val customerExists = customerRepository.existsById(customer.id!!)
+        if (!customerExists) {
+            throw Exception()
         }
+
+        customerRepository.save(customer)
     }
 
     fun delete(id: Int) {
-        custormers.removeIf { it.id == id }
+        val customerExists = customerRepository.existsById(id)
+        if (!customerExists) {
+            throw Exception()
+        }
+
+        customerRepository.deleteById(id)
     }
 
 }
