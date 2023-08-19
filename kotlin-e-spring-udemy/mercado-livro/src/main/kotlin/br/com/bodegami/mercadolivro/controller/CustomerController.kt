@@ -3,6 +3,7 @@ package br.com.bodegami.mercadolivro.controller
 import br.com.bodegami.mercadolivro.controller.request.PostCustomerRequest
 import br.com.bodegami.mercadolivro.controller.request.PutCustomerRequest
 import br.com.bodegami.mercadolivro.model.CustomerModel
+import br.com.bodegami.mercadolivro.service.CustomerService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
@@ -17,54 +18,36 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/customers")
-class CustomerController {
-
-    val custormers = mutableListOf<CustomerModel>()
+class CustomerController(
+    val customerService: CustomerService
+) {
 
     @GetMapping
     fun findAll(@RequestParam name: String?): List<CustomerModel> {
-        name?.let {
-            return custormers.filter { it.name.contains(name, true) }
-        }
-        return custormers
+        return customerService.findAll(name)
     }
 
     @GetMapping("/{id}")
     fun findById(@PathVariable id: String): CustomerModel {
-        return custormers.first { it ->
-            it.id == id
-        }
+        return customerService.findById(id)
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun create(@RequestBody customer: PostCustomerRequest) {
-        custormers.add(CustomerModel(getId(), customer.name, customer.email))
-        print(custormers)
+        customerService.create(customer)
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun update(@PathVariable id: String, @RequestBody customer: PutCustomerRequest) {
-        custormers.first { it.id == id }.let { it ->
-            it.name = customer.name
-            it.email = customer.email
-        }
+        customerService.update(id, customer)
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun delete(@PathVariable id: String) {
-        custormers.removeIf { it.id == id }
-    }
-
-
-    private fun getId(): String {
-        return if(custormers.isEmpty()) {
-            1
-        } else {
-            custormers.last().id.toInt().plus(1)
-        }.toString()
+        customerService.delete(id)
     }
 
 }
