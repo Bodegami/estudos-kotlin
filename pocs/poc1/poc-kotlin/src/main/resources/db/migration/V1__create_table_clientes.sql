@@ -1,5 +1,5 @@
 CREATE TABLE clientes(
-    id bigint auto_increment primary key,
+    id bigint GENERATED ALWAYS AS IDENTITY primary key,
     nome varchar(255) not null,
     idade varchar(3) not null,
     email varchar(255) not null unique,
