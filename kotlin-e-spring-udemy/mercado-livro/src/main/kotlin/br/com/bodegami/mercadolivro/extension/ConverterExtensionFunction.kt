@@ -4,6 +4,8 @@ import br.com.bodegami.mercadolivro.controller.request.PostBookRequest
 import br.com.bodegami.mercadolivro.controller.request.PostCustomerRequest
 import br.com.bodegami.mercadolivro.controller.request.PutBookRequest
 import br.com.bodegami.mercadolivro.controller.request.PutCustomerRequest
+import br.com.bodegami.mercadolivro.controller.response.BookResponse
+import br.com.bodegami.mercadolivro.controller.response.CustomerResponse
 import br.com.bodegami.mercadolivro.enums.BookStatus
 import br.com.bodegami.mercadolivro.enums.CustomerStatus
 import br.com.bodegami.mercadolivro.model.BookModel
@@ -35,4 +37,12 @@ fun PutBookRequest.toBookModel(previousValue: BookModel) : BookModel {
         status = previousValue.status,
         customer = previousValue.customer
     )
+}
+
+fun CustomerModel.toResponse(): CustomerResponse {
+    return CustomerResponse(this.id, this.name, this.email, this.status)
+}
+
+fun BookModel.toResponse(): BookResponse {
+    return BookResponse(this.id, this.name, this.price, this.customer, this.status)
 }

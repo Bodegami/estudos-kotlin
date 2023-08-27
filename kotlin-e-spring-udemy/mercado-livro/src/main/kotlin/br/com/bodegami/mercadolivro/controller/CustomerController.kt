@@ -2,8 +2,9 @@ package br.com.bodegami.mercadolivro.controller
 
 import br.com.bodegami.mercadolivro.controller.request.PostCustomerRequest
 import br.com.bodegami.mercadolivro.controller.request.PutCustomerRequest
+import br.com.bodegami.mercadolivro.controller.response.CustomerResponse
 import br.com.bodegami.mercadolivro.extension.toCustomerModel
-import br.com.bodegami.mercadolivro.model.CustomerModel
+import br.com.bodegami.mercadolivro.extension.toResponse
 import br.com.bodegami.mercadolivro.service.CustomerService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -24,13 +25,13 @@ class CustomerController(
 ) {
 
     @GetMapping
-    fun findAll(@RequestParam name: String?): List<CustomerModel> {
-        return customerService.findAll(name)
+    fun findAll(@RequestParam name: String?): List<CustomerResponse> {
+        return customerService.findAll(name).map { it.toResponse() }
     }
 
     @GetMapping("/{id}")
-    fun findById(@PathVariable id: Int): CustomerModel {
-        return customerService.findById(id)
+    fun findById(@PathVariable id: Int): CustomerResponse {
+        return customerService.findById(id).toResponse()
     }
 
     @PostMapping
