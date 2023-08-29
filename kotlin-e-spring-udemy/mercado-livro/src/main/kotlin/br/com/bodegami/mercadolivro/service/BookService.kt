@@ -21,7 +21,7 @@ class BookService(
     }
 
     fun findActives(pageable: Pageable): Page<BookModel> = bookRepository.findByStatus(BookStatus.ATIVO, pageable)
-    fun findById(id: Int): BookModel = bookRepository.findById(id).orElseThrow()
+    fun findById(id: Int): BookModel = bookRepository.findById(id).orElseThrow{ throw Exception("Não existe este recurso...") }
     fun delete(id: Int) {
         val book = findById(id)
         book.status = BookStatus.CANCELADO
