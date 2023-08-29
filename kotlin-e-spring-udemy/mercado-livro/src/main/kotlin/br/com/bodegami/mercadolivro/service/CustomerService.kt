@@ -1,6 +1,7 @@
 package br.com.bodegami.mercadolivro.service
 
 import br.com.bodegami.mercadolivro.enums.CustomerStatus
+import br.com.bodegami.mercadolivro.enums.Errors
 import br.com.bodegami.mercadolivro.exception.NotFoundException
 import br.com.bodegami.mercadolivro.model.CustomerModel
 import br.com.bodegami.mercadolivro.repository.CustomerRepository
@@ -25,7 +26,7 @@ class CustomerService(
     fun findById(id: Int): CustomerModel {
         return customerRepository
             .findById(id)
-            .orElseThrow{ throw NotFoundException("Customer [$id] not exists!", "ML-0011") }
+            .orElseThrow{ throw NotFoundException(Errors.ML201.message.format(id), Errors.ML201.code) }
     }
 
     fun create(customer: CustomerModel) {
