@@ -1,6 +1,7 @@
 package br.com.bodegami.mercadolivro.service
 
 import br.com.bodegami.mercadolivro.enums.BookStatus
+import br.com.bodegami.mercadolivro.exception.NotFoundException
 import br.com.bodegami.mercadolivro.model.BookModel
 import br.com.bodegami.mercadolivro.model.CustomerModel
 import br.com.bodegami.mercadolivro.repository.BookRepository
@@ -21,7 +22,10 @@ class BookService(
     }
 
     fun findActives(pageable: Pageable): Page<BookModel> = bookRepository.findByStatus(BookStatus.ATIVO, pageable)
-    fun findById(id: Int): BookModel = bookRepository.findById(id).orElseThrow{ throw Exception("Não existe este recurso...") }
+    fun findById(id: Int): BookModel = bookRepository
+        .findById(id)
+        .orElseThrow{ throw NotFoundException("Book [$id] not exists!", "ML-0001") }
+
     fun delete(id: Int) {
         val book = findById(id)
         book.status = BookStatus.CANCELADO
