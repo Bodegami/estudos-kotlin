@@ -5,10 +5,9 @@ import br.com.bode.externalprovider.ports.EnderecoDTO
 import br.com.bode.externalprovider.ports.ViaCepHttpClient
 import jakarta.inject.Inject
 
-class BuscaCepOutputAdapter(): BuscaCepOutputPort {
-
-    @Inject
-    private lateinit var viacepClient: ViaCepHttpClient
+class BuscaCepOutputAdapter(
+    var viacepClient: ViaCepHttpClient
+): BuscaCepOutputPort {
 
     override fun buscaEnderecoPeloCep(cep: String): EnderecoDTO {
         return viacepClient.buscaCep(cep)

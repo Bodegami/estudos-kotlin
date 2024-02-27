@@ -4,14 +4,10 @@ import br.com.bode.entrypoint.ports.BuscaCepInputPort
 import br.com.bode.externalprovider.ports.BuscaCepOutputPort
 import br.com.bode.externalprovider.ports.EnderecoDTO
 import io.micronaut.http.client.exceptions.HttpClientException
-import jakarta.inject.Inject
-import jakarta.inject.Singleton
 
-@Singleton
-open class BuscaEnderecoUseCase() : BuscaCepInputPort {
-
-    @Inject
-    private lateinit var consultaCep: BuscaCepOutputPort
+open class BuscaEnderecoUseCase(
+    var consultaCep: BuscaCepOutputPort
+) : BuscaCepInputPort {
 
     override fun buscaEndereco(cep: String) : EnderecoDTO {
         try {
@@ -19,7 +15,7 @@ open class BuscaEnderecoUseCase() : BuscaCepInputPort {
             return endereco;
         }
         catch (e: HttpClientException) {
-            throw IllegalArgumentException("Error: ", e.cause)
+            throw BuscaEnderecoException("Error: "+ e.message)
         }
     }
 
