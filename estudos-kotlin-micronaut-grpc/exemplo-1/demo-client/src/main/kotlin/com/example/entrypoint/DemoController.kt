@@ -1,6 +1,6 @@
 package com.example.entrypoint
 
-import com.example.externalprovider.grpc.DemoService
+import com.example.externalprovider.grpc.DemoServiceServer
 import com.example.dto.EnderecoDTO
 import com.example.Entities.FindAdressRequest
 import io.micronaut.http.annotation.Controller
@@ -9,7 +9,7 @@ import io.micronaut.http.annotation.PathVariable
 
 @Controller("/teste")
 class DemoController(
-    private val demo: DemoService
+    private val demo: DemoServiceServer
 )  {
 
     @Get("/{cep}")

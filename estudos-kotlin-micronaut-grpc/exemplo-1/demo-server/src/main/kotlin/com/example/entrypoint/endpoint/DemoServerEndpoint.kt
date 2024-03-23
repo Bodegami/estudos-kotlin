@@ -13,12 +13,19 @@ class DemoServerEndpoint(
     private val consultaEnderecoService: ConsultaEnderecoService
 ) : DemoServerServiceGrpcKt.DemoServerServiceCoroutineImplBase() {
 
+    var num: Int = 1
+
     override suspend fun saveUser(request: SaveUserRequest): UserResponse {
-        return UserResponse.newBuilder()
-            .setId(1)
+        println("Salvando usuário de id: $num")
+
+        val response = UserResponse.newBuilder()
+            .setId(num)
             .setName(request.name)
             .setLastName(request.lastName)
             .build()
+
+        num++
+        return response
     }
     override fun saveUserStream(requests: Flow<SaveUserRequest>): Flow<UserResponse> = flow {
         var id = 1

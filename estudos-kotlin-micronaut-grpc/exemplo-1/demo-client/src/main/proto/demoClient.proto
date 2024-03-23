@@ -9,5 +9,6 @@ option objc_class_prefix = "HLW";
 package com.example;
 
 service DemoClientService {
+  rpc saveUser (SaveUserRequest) returns (UserResponse) {}
   rpc findAdressByCepClient (FindAdressRequest) returns (AdressResponse) {}
 }
