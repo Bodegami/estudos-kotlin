@@ -36,6 +36,7 @@ class DemoServerEndpoint(
     }
 
     override suspend fun findAdressByCep(request: FindAdressRequest): AdressResponse {
+        print("Chamando endpoint de consulta para o cep: ${request.cep}!!!\n")
         val response = consultaEnderecoService.consultaEndereco(EnderecoRequest(request.cep))
         return AdressResponse.newBuilder()
             .setCep(response.cep)
