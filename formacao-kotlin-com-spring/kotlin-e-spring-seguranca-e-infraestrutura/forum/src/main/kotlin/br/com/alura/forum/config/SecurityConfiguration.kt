@@ -19,11 +19,11 @@ class SecurityConfiguration(
     override fun configure(http: HttpSecurity?) {
         http?.
         authorizeHttpRequests()?.
+        antMatchers("/topicos")?.hasAnyAuthority("LEITURA_ESCRITA")?.
         anyRequest()?.
         authenticated()?.
         and()?.
-        sessionManagement()?.
-        sessionCreationPolicy(SessionCreationPolicy.STATELESS)?.
+        sessionManagement()?.sessionCreationPolicy(SessionCreationPolicy.STATELESS)?.
         and()?.
         formLogin()?.
         disable()?.
