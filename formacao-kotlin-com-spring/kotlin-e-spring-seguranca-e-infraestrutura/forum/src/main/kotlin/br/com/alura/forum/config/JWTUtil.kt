@@ -29,7 +29,7 @@ class JWTUtil {
             Jwts.parser().setSigningKey(secret.toByteArray()).parseClaimsJws(jwt)
             true
         }
-        catch (e: IllegalArgumentException) {
+        catch (e: Exception) {
             false
         }
     }
