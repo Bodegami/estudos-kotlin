@@ -9,3 +9,18 @@ bash: docker build -t forum -f Dockerfile .
 
 Executando a aplicacao em um container docker
 bash: docker run -p 3080:8080 forum
+
+Baixando a imagem do mysql:
+bash: docker pull mysql:8.0.28
+
+Executando a imagem do musql:
+bash: docker run -d -p 3306:3306 --name mysql-container -e MYSQL_ROOT_PASSWORD=root -e MYSQL_PASSWORD=root mysql:8.0.28
+
+Acessando o container do database:
+bash: docker exec -it mysql-container bash
+
+Conectando no mysql:
+bash: mysql -u root -p // depois inserir a senha
+
+Criando o banco de dados:
+bash: create database forum;
