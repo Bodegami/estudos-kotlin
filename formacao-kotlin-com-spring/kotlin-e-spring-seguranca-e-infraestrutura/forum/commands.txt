@@ -1,0 +1,5 @@
+Subindo a aplicação via linha de comando:
+bash: mvn spring-boot:run
+
+Definindo um profile na hora de subir a aplicação:
+bash: mvn spring-boot:run -Dspring-boot.run.profiles=dev
