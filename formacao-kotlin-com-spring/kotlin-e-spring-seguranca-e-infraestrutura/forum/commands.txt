@@ -3,3 +3,9 @@ bash: mvn spring-boot:run
 
 Definindo um profile na hora de subir a aplicação:
 bash: mvn spring-boot:run -Dspring-boot.run.profiles=dev
+
+Criando o build da aplicacao com docker
+bash: docker build -t forum -f Dockerfile .
+
+Executando a aplicacao em um container docker
+bash: docker run -p 3080:8080 forum
