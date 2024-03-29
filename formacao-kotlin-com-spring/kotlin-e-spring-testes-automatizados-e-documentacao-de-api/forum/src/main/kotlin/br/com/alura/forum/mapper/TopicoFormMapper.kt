@@ -5,6 +5,7 @@ import br.com.alura.forum.model.Topico
 import br.com.alura.forum.service.CursoService
 import br.com.alura.forum.service.UsuarioService
 import org.springframework.stereotype.Component
+import java.time.LocalDate
 
 @Component
 class TopicoFormMapper(
@@ -17,7 +18,7 @@ class TopicoFormMapper(
             titulo = t.titulo,
             mensagem = t.mensagem,
             curso = cursoService.buscarPorId(id = t.idCurso),
-            autor = usuarioService.buscarPorId(id = t.idAutor),
+            autor = usuarioService.buscarPorId(id = t.idAutor)
         )
     }
 
